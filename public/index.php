@@ -14,4 +14,6 @@ $router
     ->get('/equipe/smasc','mjv/equipes/equipeAdulteMasc','smasc')
     ->get('/equipe/sfem','mjv/equipes/equipeAdulteFem','smfem')
     ->get('/equipe/u18masc','mjv/equipes/equipeU18masc','u18masc')
+    ->get('/equipe/u18fem','mjv/equipes/equipeU18Fem','u18fem')
+
     ->run();
