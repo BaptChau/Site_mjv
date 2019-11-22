@@ -27,8 +27,8 @@
           <a class="dropdown-item" href="<?= $router->generate('smasc') ?>">&Eacute;quipes adulte Masculine</a>
           <a class="dropdown-item" href="<?= $router->generate('smfem') ?>">&Eacute;quipe adulte Féminine</a>
           <a class="dropdown-item" href="<?= $router->generate('u18masc') ?>">&Eacute;quipe -18 Masculine</a>
-          <a class="dropdown-item" href="#">&Eacute;quipe -15 Féminine</a>
-          <a class="dropdown-item" href="#">&Eacute;quipe -15 Masculine</a>
+          <a class="dropdown-item" href="<?= $router->generate('u15fem') ?>">&Eacute;quipe -15 Féminine</a>
+          <a class="dropdown-item" href="<?= $router->generate('u15masc')?>">&Eacute;quipe -15 Masculine</a>
           <a class="dropdown-item" href="#">&Eacute;quipe -11 Masculine</a>
           <a class="dropdown-item" href="#">Baby Hand</a>
       </li>
