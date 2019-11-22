@@ -40,6 +40,7 @@ class Router
         // $view = 'starBatlle\index';
         // var_dump($view);
         \ob_start();
+        $router = $this->router;
         require $this->viewPath . DIRECTORY_SEPARATOR .$view . '.php';
         $content = \ob_get_clean();
         // $content = 'test';
