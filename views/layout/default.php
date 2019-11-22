@@ -1,3 +1,6 @@
+<?php
+  require '../../vendor/autoload.php';
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
@@ -33,7 +36,7 @@
           <a class="dropdown-item" href="<?= $router->generate('babyhand') ?>">Baby Hand</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Calepin</a>
+        <a class="nav-link" href="<?= $router->generate('calepin') ?>">Calepin</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">&Agrave; propos</a>

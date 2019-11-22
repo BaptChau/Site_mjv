@@ -20,4 +20,7 @@ $router
     ->get('/equipe/u15fem','mjv/equipes/equipeU15Fem','u15fem')
     ->get('/equipe/u11masc','mjv/equipes/equipeU11masc','u11masc')
     ->get('/equipe/babyhand','mjv/equipes/babyhand','babyhand')
+    //Routes pour le calepin
+    ->get('/calepin','mjv/calepin/calepinIndex','calepin')
+
     ->run();
