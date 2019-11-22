@@ -22,5 +22,7 @@ $router
     ->get('/equipe/babyhand','mjv/equipes/babyhand','babyhand')
     //Routes pour le calepin
     ->get('/calepin','mjv/calepin/calepinIndex','calepin')
+    ->get('/calepin/new','mjv/calepin/newArticle','calepinNew')
+    
 
     ->run();

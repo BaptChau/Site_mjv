@@ -36,6 +36,7 @@ class Router
     {
         $match = $this->router->match();
         // var_dump($match);
+        $params = $match['params'];
         $view = $match['target'];
         // var_dump($view);
         \ob_start();

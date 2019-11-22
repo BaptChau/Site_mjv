@@ -35,8 +35,15 @@
           <a class="dropdown-item" href="<?= $router->generate('u11masc') ?>">&Eacute;quipe -11 Masculine</a>
           <a class="dropdown-item" href="<?= $router->generate('babyhand') ?>">Baby Hand</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?= $router->generate('calepin') ?>">Calepin</a>
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+            Le Calepin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="<?= $router->generate('calepin') ?>">Consultez le Calepin</a>
+          <a class="dropdown-item" href="<?= $router->generate('calepinNew') ?>">Ajoutez un article</a>
+
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">&Agrave; propos</a>

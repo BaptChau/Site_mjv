@@ -13,7 +13,7 @@ $arr = $base ->getArticle();
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center">
-            <a href="#" class="btn btn-primary btn-lg m-4 " >Nouvel article</a>
+            <a href="<?php  ?>" class="btn btn-primary btn-lg m-4 " >Nouvel article</a>
 
         </div>
     </div>
