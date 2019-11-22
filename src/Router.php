@@ -37,7 +37,6 @@ class Router
         $match = $this->router->match();
         // var_dump($match);
         $view = $match['target'];
-        // $view = 'starBatlle\index';
         // var_dump($view);
         \ob_start();
         $router = $this->router;
