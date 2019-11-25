@@ -38,4 +38,12 @@ class Bdd
         return $arr;
     }
     
+    public function getLast5Article(){
+        $req = "SELECT * FROM `calepin` ORDER BY id_article DESC LIMIT 5 ";
+        $stmt = $this->connexion->prepare($req);
+        $stmt->execute();
+        $arr = $stmt -> fetchAll();
+
+        return $arr;
+    }
 }

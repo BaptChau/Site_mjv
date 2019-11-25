@@ -4,6 +4,9 @@ namespace App\Models;
 
 use App\Base\Bdd;
 
+require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
+
+
 class Article 
 {
     private $title;
@@ -102,16 +105,20 @@ class Article
 
            $bdCon = $this->pdo->getConnexion();
 
-           $sql = "INSERT INTO TABLE calepin VALUES (NULL,? ,? ,?)";
+           $sql = "INSERT INTO calepin VALUES (NULL,? ,? ,?)";
            $stmt = $bdCon-> prepare($sql);
            $nText = $this->getContent();
            $nTitle = $this->getTitle();
            $nAuthor = $this->getAuthor();
             try {
                 //code...
-                return $stmt -> execute(array($nTitle,$nText,$nAuthor));
+                $arr = array($nTitle,$nText,$nAuthor);
+                $bool = $stmt -> execute($arr);
+                var_dump($bool);
+                var_dump($arr);
+                return $bool;
             } catch (\Throwable $th) {
-                dump($th);
+                var_dump($th);
             }
         }
 
@@ -120,3 +127,5 @@ class Article
     }
 }
 
+// $art = new Article('Test Obj','text test Obj','Bapt');
+// $art->save();

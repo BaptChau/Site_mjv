@@ -46,10 +46,10 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">&Agrave; propos</a>
+        <a class="nav-link" href="<?= $router->generate('about') ?>">&Agrave; propos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Nous contacter</a>
+        <a class="nav-link" href="<?= $router->generate('contact') ?>">Nous contacter</a>
       </li>
     </ul>
       <a class="btn btn-success my-2 my-sm-0" href="#">Login</a>

@@ -1,4 +1,8 @@
-<form action="" method="post">
+<?php
+require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
+
+?>
+<form action="script/addArticle" method="post">
     <fieldset>
         <legend>Nouvel Article dans le calepin :</legend>
         <label for="nom">Qui écrit ?</label>
@@ -14,8 +18,7 @@
 </form>
 
 <?php
-require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
-use App\Models\Article;
+// use App\Models\Article;
 
-$art = new Article('test1','Loremipsokndezaihfcoipdsqjvichjqzoslkfoijhcekkf$opicjenjsd^pfoihcebrnspfijcperijkskfôieczkqjkcojencodj', 'baptiste');
-$art->save();
+// $art = new Article('test1','Loremipsokndezaihfcoipdsqjvichjqzoslkfoijhcekkf$opicjenjsd^pfoihcebrnspfijcperijkskfôieczkqjkcojencodj', 'baptiste');
+// $art->save();
