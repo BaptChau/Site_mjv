@@ -29,6 +29,6 @@ $router
     ->get('/a-propos', 'mjv/aPropos', 'about')
     //Route contact
     ->get('/contact', 'mjv/contact', 'contact')
-
+    ->get('/admin','admin/connexionAdm','adminPanel')
 
     ->run();
