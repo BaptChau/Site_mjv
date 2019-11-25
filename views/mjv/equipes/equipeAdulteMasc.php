@@ -16,7 +16,7 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
     <h3>Le mot du responsable de l'equipe Luc Chaudron : </h3>
     <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ab maxime numquam sapiente quasi sequi id placeat nesciunt corporis veritatis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ab maxime numquam sapiente quasi sequi id placeat nesciunt corporis veritatis.
     </p>
 </div>
 <hr>

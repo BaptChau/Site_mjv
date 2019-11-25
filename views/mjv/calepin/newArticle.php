@@ -14,7 +14,7 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
         <label for="contenu">Corps de l'article</label>
         <textarea name="contenu" require class="form-control" id="contenu" cols="30" rows="10" placeholder="Quel est l'horaire du match -18 de ce week-end ?"></textarea>
     </fieldset>
-        <button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
+    <button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
 </form>
 
 <?php

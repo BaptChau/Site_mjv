@@ -1,5 +1,3 @@
-
-
 <?php
 
 require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
@@ -17,6 +15,6 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
     <h3>Le mot du responsable de l'equipe Jérome Lorrain : </h3>
     <p>
-Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, laboriosam.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, laboriosam.
     </p>
 </div>

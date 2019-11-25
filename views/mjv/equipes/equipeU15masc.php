@@ -15,7 +15,7 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
     <h3>Le mot des responsables de l'equipe Louis Zanon et Gaetan Mathieu : </h3>
     <p>
-    Louis : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos possimus laboriosam distinctio minima odit fuga?
+        Louis : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos possimus laboriosam distinctio minima odit fuga?
     </p>
     <p>
         Gaetan : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, aliquam.

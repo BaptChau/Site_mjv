@@ -6,32 +6,32 @@ use App\Base\Bdd;
 
 $base = new Bdd();
 
-$arr = $base ->getArticle();
+$arr = $base->getArticle();
 // dump($arr);
 ?>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center">
-            <a href="<?php  ?>" class="btn btn-primary btn-lg m-4 " >Nouvel article</a>
+            <a href="<?php  ?>" class="btn btn-primary btn-lg m-4 ">Nouvel article</a>
 
         </div>
     </div>
-</div>    
+</div>
 
 <div class="container-fluid">
-    <?php foreach ($arr as $key => $value):  ?> 
+    <?php foreach ($arr as $key => $value) :  ?>
         <div class="jumbotron">
-        <div class="card">
-  <div class="card-body">
-    <h5 class="card-title"><?php echo($value['titre']) ?></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><?php echo($value['auteur']) ?></h6>
-    <p class="card-text"><?php echo($value['contenu']) ?></p>
-  </div>
-</div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo ($value['titre']) ?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><?php echo ($value['auteur']) ?></h6>
+                    <p class="card-text"><?php echo ($value['contenu']) ?></p>
+                </div>
+            </div>
         </div>
 
-    
+
     <?php endforeach; ?>
-        
+
 </div>

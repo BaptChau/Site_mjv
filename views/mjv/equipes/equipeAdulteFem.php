@@ -13,6 +13,6 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
     <h3>Le mot du responsable de l'equipe Olivier LeNormand : </h3>
     <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem earum nam, beatae qui ex, odio doloremque est, exercitationem dolorem tempore aperiam dolores nemo modi architecto? Numquam, voluptatem. Exercitationem, quos quia.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem earum nam, beatae qui ex, odio doloremque est, exercitationem dolorem tempore aperiam dolores nemo modi architecto? Numquam, voluptatem. Exercitationem, quos quia.
     </p>
 </div>
