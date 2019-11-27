@@ -2,7 +2,7 @@
 require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
 ?>
-<form action="script/addArticle" method="post">
+<form action="<?= $router->url('articleValid',$_POST) ?>" method="post">
     <fieldset>
         <legend>Nouvel Article dans le calepin :</legend>
         <label for="nom">Qui écrit ?</label>

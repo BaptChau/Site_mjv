@@ -17,7 +17,7 @@ require '../../vendor/autoload.php';
 
 <body class="d-flex flex-column h-100">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="<?= $router->generate('index'); ?>">Mj Vaubecourt</a>
+    <a class="navbar-brand" href="<?= $router->url('index'); ?>">Mj Vaubecourt</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,29 +29,29 @@ require '../../vendor/autoload.php';
             Les &Eacute;quipes
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<?= $router->generate('smasc') ?>">&Eacute;quipes adulte Masculine</a>
-            <a class="dropdown-item" href="<?= $router->generate('smfem') ?>">&Eacute;quipe adulte Féminine</a>
-            <a class="dropdown-item" href="<?= $router->generate('u18masc') ?>">&Eacute;quipe -18 Masculine</a>
-            <a class="dropdown-item" href="<?= $router->generate('u15fem') ?>">&Eacute;quipe -15 Féminine</a>
-            <a class="dropdown-item" href="<?= $router->generate('u15masc') ?>">&Eacute;quipe -15 Masculine</a>
-            <a class="dropdown-item" href="<?= $router->generate('u11masc') ?>">&Eacute;quipe -11 Masculine</a>
-            <a class="dropdown-item" href="<?= $router->generate('babyhand') ?>">Baby Hand</a>
+            <a class="dropdown-item" href="<?= $router->url('smasc') ?>">&Eacute;quipes adulte Masculine</a>
+            <a class="dropdown-item" href="<?= $router->url('smfem') ?>">&Eacute;quipe adulte Féminine</a>
+            <a class="dropdown-item" href="<?= $router->url('u18masc') ?>">&Eacute;quipe -18 Masculine</a>
+            <a class="dropdown-item" href="<?= $router->url('u15fem') ?>">&Eacute;quipe -15 Féminine</a>
+            <a class="dropdown-item" href="<?= $router->url('u15masc') ?>">&Eacute;quipe -15 Masculine</a>
+            <a class="dropdown-item" href="<?= $router->url('u11masc') ?>">&Eacute;quipe -11 Masculine</a>
+            <a class="dropdown-item" href="<?= $router->url('babyhand') ?>">Baby Hand</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
             Le Calepin
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<?= $router->generate('calepin') ?>">Consultez le Calepin</a>
-            <a class="dropdown-item" href="<?= $router->generate('calepinNew') ?>">Ajoutez un article</a>
+            <a class="dropdown-item" href="<?= $router->url('calepin') ?>">Consultez le Calepin</a>
+            <a class="dropdown-item" href="<?= $router->url('calepinNew') ?>">Ajoutez un article</a>
 
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= $router->generate('about') ?>">&Agrave; propos</a>
+          <a class="nav-link" href="<?= $router->url('about') ?>">&Agrave; propos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= $router->generate('contact') ?>">Nous contacter</a>
+          <a class="nav-link" href="<?= $router->url('contact') ?>">Nous contacter</a>
         </li>
       </ul>
     </div>

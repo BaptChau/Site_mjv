@@ -31,4 +31,11 @@ $router
     ->get('/contact', 'mjv/contact', 'contact')
     ->get('/admin','admin/connexionAdm','adminPanel')
 
+
+    //Validation de formulaire
+    // ->get('/calepin/new/validator','calepin/validator','articleValid')
+    ->post('/calepin/new/validator','mjv/calepin/validator','articleValid')
+
+
     ->run();
+

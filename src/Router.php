@@ -33,10 +33,14 @@ class Router
         return $this;
     }
 
-    public function post()
+    public function post(string $url, string $view, ?string $name = null): self
     {
-        
+        $this->router->map('POST',$url,$view,$name);
         return $this;
+    }
+
+    public function url(string $name, array $params = []){
+        return $this->router->generate($name,$params);
     }
 
     public function run(): self
@@ -45,9 +49,9 @@ class Router
         // var_dump($match);
         $params = $match['params'];
         $view = $match['target'];
+        $router = $this;
         // var_dump($view);
         \ob_start();
-        $router = $this->router;
         require $this->viewPath . DIRECTORY_SEPARATOR . $view . '.php';
         $content = \ob_get_clean();
         // $content = 'test';
