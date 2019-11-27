@@ -14,7 +14,9 @@ require '../../vendor/autoload.php';
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <title><?= $title ?? 'MJ Vaubecourt' ?></title>
 </head>
-
+<?php
+  if (false === strpos($_SERVER['PATH_INFO'], 'admin')):
+?>
 <body class="d-flex flex-column h-100">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="<?= $router->url('index'); ?>">Mj Vaubecourt</a>
@@ -70,5 +72,12 @@ require '../../vendor/autoload.php';
     </div>
   </footer>
 </body>
-
+  <?php else: ?>
+    <body class="d-flex flex-column h-100">
+      <div class="container">
+        <?php ?>
+        <?= $content ?>
+      </div>
+    </body>
+  <?php endif; ?>
 </html>

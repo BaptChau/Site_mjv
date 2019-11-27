@@ -114,8 +114,8 @@ class Article
                 //code...
                 $arr = array($nTitle,$nText,$nAuthor);
                 $bool = $stmt -> execute($arr);
-                var_dump($bool);
-                var_dump($arr);
+                // var_dump($bool);
+                // dump($arr);
                 return $bool;
             } catch (\Throwable $th) {
                 var_dump($th);

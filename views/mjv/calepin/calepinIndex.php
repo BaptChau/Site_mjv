@@ -26,7 +26,7 @@ $arr = $base->getArticle();
                 <div class="card-body">
                     <h5 class="card-title"><?php echo ($value['titre']) ?></h5>
                     <h6 class="card-subtitle mb-2 text-muted"><?php echo ($value['auteur']) ?></h6>
-                    <p class="card-text"><?php echo ($value['contenu']) ?></p>
+                    <p class="card-text"><?php echo nl2br(htmlspecialchars($value['contenu'])) ?></p>
                 </div>
             </div>
         </div>

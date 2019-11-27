@@ -1,4 +1,4 @@
-<form action="" method="post">
+<form action="<?= $router->url('validUser',$_POST) ?>" method="post">
     <div class="container">
         <div class="col">
             <div class="row">

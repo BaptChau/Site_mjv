@@ -59,4 +59,44 @@ class Router
 
         return $this;
     }
+
+
+    /****************
+     *              *
+     * Router admin *
+     *              *
+     ****************/
+
+    public function getAdm(string $url, string $view, ?string $name = null): self
+    {
+        $this->router->map('GET', $url, $view, $name);
+        return $this;
+    }
+
+    public function postAdm(string $url, string $view, ?string $name = null): self
+    {
+        $this->router->map('POST',$url,$view,$name);
+        return $this;
+    }
+
+
+
+
+    public function runAdmin(): self
+    {
+        $match = $this->router->match();
+        // var_dump($match);
+        $params = $match['params'];
+        $view = $match['target'];
+        $router = $this;
+        // var_dump($view);
+        \ob_start();
+        require $this->viewPath . DIRECTORY_SEPARATOR . $view . '.php';
+        $content = \ob_get_clean();
+        // $content = 'test';
+        
+        require $this->viewPath . DIRECTORY_SEPARATOR . 'layout/default.php';
+
+        return $this;
+    }
 }

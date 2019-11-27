@@ -29,13 +29,13 @@ $router
     ->get('/a-propos', 'mjv/aPropos', 'about')
     //Route contact
     ->get('/contact', 'mjv/contact', 'contact')
+    //Formulaire 
     ->get('/admin','admin/connexionAdm','adminPanel')
 
 
     //Validation de formulaire
-    // ->get('/calepin/new/validator','calepin/validator','articleValid')
     ->post('/calepin/new/validator','mjv/calepin/validator','articleValid')
+    ->post('/admin/conn','admin/panel/index','validUser')
 
 
     ->run();
-

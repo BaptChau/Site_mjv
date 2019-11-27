@@ -46,4 +46,20 @@ class Bdd
 
         return $arr;
     }
+
+    public function connexionUser($username, $password): bool
+    {
+        $sql = "SELECT id_user from user where username = ? AND `password` = ?  ";
+
+        $stmt = $this->connexion->prepare($sql);
+        $stmt->execute(array($username,$password));
+        $arr = $stmt -> fetchAll();
+
+        if (sizeof($arr)>1 || sizeof($arr) == 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }
