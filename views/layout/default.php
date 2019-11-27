@@ -75,7 +75,14 @@ require '../../vendor/autoload.php';
   <?php else: ?>
     <body class="d-flex flex-column h-100">
       <div class="container">
-        <?php ?>
+        <?php 
+          if (session_id()):
+        ?>
+          Connecté
+          <?php else: ?>
+            Connectez vous
+          <?php endif;?>
+
         <?= $content ?>
       </div>
     </body>
