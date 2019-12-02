@@ -37,5 +37,8 @@ $router
     ->post('/calepin/new/validator','mjv/calepin/validator','articleValid')
     ->post('/admin/conn','admin/panel/index','validUser')
 
+    //Déconnexion
+
+    ->get('/logout','admin/logout','logout')
 
     ->run();

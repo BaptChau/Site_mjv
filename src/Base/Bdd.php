@@ -59,6 +59,7 @@ class Bdd
             return false;
         }
         else {
+            session_start();
             return true;
         }
     }

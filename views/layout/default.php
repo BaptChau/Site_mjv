@@ -15,76 +15,98 @@ require '../../vendor/autoload.php';
   <title><?= $title ?? 'MJ Vaubecourt' ?></title>
 </head>
 <?php
-  if (false === strpos($_SERVER['PATH_INFO'], 'admin')):
-?>
-<body class="d-flex flex-column h-100">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="<?= $router->url('index'); ?>">Mj Vaubecourt</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUEST_URI'])) :
+  ?>
 
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-            Les &Eacute;quipes
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<?= $router->url('smasc') ?>">&Eacute;quipes adulte Masculine</a>
-            <a class="dropdown-item" href="<?= $router->url('smfem') ?>">&Eacute;quipe adulte Féminine</a>
-            <a class="dropdown-item" href="<?= $router->url('u18masc') ?>">&Eacute;quipe -18 Masculine</a>
-            <a class="dropdown-item" href="<?= $router->url('u15fem') ?>">&Eacute;quipe -15 Féminine</a>
-            <a class="dropdown-item" href="<?= $router->url('u15masc') ?>">&Eacute;quipe -15 Masculine</a>
-            <a class="dropdown-item" href="<?= $router->url('u11masc') ?>">&Eacute;quipe -11 Masculine</a>
-            <a class="dropdown-item" href="<?= $router->url('babyhand') ?>">Baby Hand</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-            Le Calepin
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<?= $router->url('calepin') ?>">Consultez le Calepin</a>
-            <a class="dropdown-item" href="<?= $router->url('calepinNew') ?>">Ajoutez un article</a>
+  <body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="<?= $router->url('index'); ?>">Mj Vaubecourt</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?= $router->url('about') ?>">&Agrave; propos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?= $router->url('contact') ?>">Nous contacter</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+              Les &Eacute;quipes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="<?= $router->url('smasc') ?>">&Eacute;quipes adulte Masculine</a>
+              <a class="dropdown-item" href="<?= $router->url('smfem') ?>">&Eacute;quipe adulte Féminine</a>
+              <a class="dropdown-item" href="<?= $router->url('u18masc') ?>">&Eacute;quipe -18 Masculine</a>
+              <a class="dropdown-item" href="<?= $router->url('u15fem') ?>">&Eacute;quipe -15 Féminine</a>
+              <a class="dropdown-item" href="<?= $router->url('u15masc') ?>">&Eacute;quipe -15 Masculine</a>
+              <a class="dropdown-item" href="<?= $router->url('u11masc') ?>">&Eacute;quipe -11 Masculine</a>
+              <a class="dropdown-item" href="<?= $router->url('babyhand') ?>">Baby Hand</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+              Le Calepin
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="<?= $router->url('calepin') ?>">Consultez le Calepin</a>
+              <a class="dropdown-item" href="<?= $router->url('calepinNew') ?>">Ajoutez un article</a>
 
-
-  <div class="container">
-    <?= $content ?>
-  </div>
-
-
-  <footer class="bg-light  footer mt-auto footer-copyright">
-    <div class="container col text-center">
-      Maison des Jeunes Vaubécourt &nbsp;
-      Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a>
-    </div>
-  </footer>
-</body>
-  <?php else: ?>
-    <body class="d-flex flex-column h-100">
-      <div class="container">
-        <?php 
-          if (session_id()):
-        ?>
-          Connecté
-          <?php else: ?>
-            Connectez vous
-          <?php endif;?>
-
-        <?= $content ?>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= $router->url('about') ?>">&Agrave; propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= $router->url('contact') ?>">Nous contacter</a>
+          </li>
+        </ul>
       </div>
-    </body>
-  <?php endif; ?>
+    </nav>
+
+
+    <div class="container">
+      <?= $content ?>
+    </div>
+
+
+    <footer class="bg-light  footer mt-auto footer-copyright">
+      <div class="container col text-center">
+        Maison des Jeunes Vaubécourt &nbsp;
+        Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a>
+      </div>
+    </footer>
+  </body>
+<?php else : ?>
+
+  <body class="d-flex flex-column h-100">
+
+
+    <?php
+      if (session_id()) : ?>
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+
+
+          <div class="sidebar-header">
+            <a href="<?= $router->url('logout'); ?>" class="btn btn-primary">Déconexion</a>
+          </div>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
+            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
+            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
+            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
+            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
+            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
+
+          </ul>
+        </div>
+      </nav>
+      </div>
+    <?php else : ?>
+      <div class="container">
+        <h2> Connectez vous</h2>
+      </div>
+    <?php endif; ?>
+
+    <?= $content ?>
+  </body>
+<?php endif; ?>
+
 </html>
