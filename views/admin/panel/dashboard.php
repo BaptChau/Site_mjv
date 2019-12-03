@@ -12,13 +12,15 @@ if ($user === null) {
     // dump($user);
     header('Location:'.$router->url('index'));
 }
-$arr = $bdd->getLast5Article();
+$arr = $bdd->executeQuery($bdd->getLast5Article());
 ?>
 <div class="row">
     <div class="col-3">
+
     </div>
 
 <div class="col-3">
+    <h4> 5 dernier calepin</h4>
     <?php
         foreach ($arr as $key => $value):
     ?>

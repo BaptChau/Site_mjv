@@ -31,20 +31,15 @@ class Bdd
 
     public function getArticle(){
         $req = "SELECT * FROM `calepin` order by id_article DESC ";
-        $stmt = $this-> connexion -> prepare($req);
-        $stmt->execute();
-        $arr = $stmt ->fetchAll();
 
-        return $arr;
+        return $req;
     }
     
     public function getLast5Article(){
         $req = "SELECT * FROM `calepin` ORDER BY id_article DESC LIMIT 5 ";
-        $stmt = $this->connexion->prepare($req);
-        $stmt->execute();
-        $arr = $stmt -> fetchAll();
+      
 
-        return $arr;
+        return $req;
     }
 
     public function connexionUser($username, $password): bool
@@ -63,4 +58,43 @@ class Bdd
             return true;
         }
     }
+
+    public function getNewsByUser(){
+        $sql = "SELECT * FROM news WHERE auteur = ? ";
+
+        return $sql;
+    }
+
+    public function getAllNews(){
+        $sql = "SELECT * FROM news";
+
+
+        return $sql;
+    }
+
+    public function getLast5News(){
+        $sql = "SELECT * FROM news ORDER BY id_news DESC limit 5";
+        return $sql;
+    }
+
+    public function getResultsOfTheWeek() :string {
+        $sql = "SELECT * from week_end_results where weekofyear(`weekend`) = ?";
+        return $sql;
+
+    }
+
+    public function getAuthor(){
+        $sql = "SELECT identite FROM user where id_user = (SELECT auteur FROM news WHERE id_news = ?)";
+
+        return $sql;
+    }
+    public function executeQuery(string $sql, array $params = []) :array {
+        $stmt = $this->connexion->prepare($sql);
+        $stmt->execute($params);
+        $arr = $stmt->fetchAll();
+
+        return $arr;
+    }
+
+    
 }

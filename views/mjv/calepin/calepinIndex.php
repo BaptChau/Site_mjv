@@ -6,7 +6,7 @@ use App\Base\Bdd;
 
 $base = new Bdd();
 
-$arr = $base->getArticle();
+$arr = $base->executeQuery($base->getArticle());
 // dump($arr);
 ?>
 
