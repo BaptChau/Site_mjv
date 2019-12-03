@@ -44,5 +44,6 @@ $router
 
     //Pages Admin
     ->get('/admin/dashboard','admin/panel/dashboard','dashboard')
+    ->get('/admin/addUser','admin/panel/ajoutUtilisateur','newUser')
 
     ->run();

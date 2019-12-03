@@ -69,13 +69,7 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
     </div>
 
 
-    <footer class="bg-light  footer mt-auto footer-copyright">
-      <div class="container col text-center">
-        Maison des Jeunes Vaubécourt &nbsp;
-        Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a>
-      </div>
-    </footer>
-  </body>
+    
 <?php else : ?>
 
   
@@ -84,6 +78,38 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
       if (session_id()) : ?>
         <body class="d-flex flex-column h-100">
         
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="<?= $router->url('dashboard') ?>">Administrateur</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="<?= $router->url('newUser') ?>">Ajouter Utilisateur </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ajouter Article</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Gestion Calepin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Gestion Feed News</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#">Liste Utilisateur</a>
+      </li>
+      <li class="form-inline ">
+      <a href="<?= $router->url('logout') ?>" class="btn btn-warning">Déconnexion</a>
+          </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+
+
     <?php else : ?>
       <body class="d-flex flex-column h-100 bg-light">
         <div class="jumbotron">
@@ -93,6 +119,14 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
     <?php endif; ?>
 
     <?= $content ?>
+    </div>
+    <footer class="bg-light  footer mt-auto footer-copyright">
+      <div class="container col text-center">
+        Maison des Jeunes Vaubécourt &nbsp;
+        Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a>
+      </div>
+    </footer>
+ 
   </body>
 <?php endif; ?>
 

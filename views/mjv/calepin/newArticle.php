@@ -2,7 +2,7 @@
 require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
 ?>
-<form action="<?= $router->url('articleValid',$_POST) ?>" method="post">
+<form action="<?= $router->url('articleValid', $_POST) ?>" method="post">
     <fieldset>
         <legend>Nouvel Article dans le calepin :</legend>
         <label for="nom">Qui écrit ?</label>
@@ -16,9 +16,3 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
     </fieldset>
     <button type="submit" class="btn btn-primary btn-lg">Envoyer</button>
 </form>
-
-<?php
-// use App\Models\Article;
-
-// $art = new Article('test1','Loremipsokndezaihfcoipdsqjvichjqzoslkfoijhcekkf$opicjenjsd^pfoihcebrnspfijcperijkskfôieczkqjkcojencodj', 'baptiste');
-// $art->save();
