@@ -34,8 +34,11 @@ class Auth
         if(password_verify($password, $user->password)){
           if (session_status() === PHP_SESSION_NONE) {
             \session_start();
+            $_SESSION['__id__'] = session_id();
+
         }  
-        $_SESSION['auth'] = $user -> id;
+        
+        $_SESSION['auth'] = $user->id_user;
         return $user;
     }
 
@@ -44,7 +47,26 @@ class Auth
 
     public function user(): ?User{
 
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+            $_SESSION['__id__'] = session_id();
+        }
+        $id = $_SESSION['auth'] ?? null;
+        // dump($id);
+        // dump($_SESSION);
+        if ($id === null) {
+            return null;
+        }
 
+        $query = $this->pdo->prepare('SELECT * FROM user where id_user = ?');
+        //user correspondant unsername
+        $query->execute([$id]);
+        
+        $user = $query->fetchObject(User::class);
+        // dump($user);
+        // dump($id);
+
+        return $user ?:null;
 
     }
 

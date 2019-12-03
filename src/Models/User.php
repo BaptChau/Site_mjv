@@ -33,6 +33,6 @@ class User
      *
      * @var int 
      */
-    public $id;
+    public $id_user;
     
 }

@@ -75,34 +75,18 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
   </body>
 <?php else : ?>
 
-  <body class="d-flex flex-column h-100">
-
-
-    <?php
+  
+  
+  <?php
       if (session_id()) : ?>
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-
-
-          <div class="sidebar-header">
-            <a href="<?= $router->url('logout'); ?>" class="btn btn-primary">Déconexion</a>
-          </div>
-          <ul class="nav flex-column">
-            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
-            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
-            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
-            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
-            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
-            <li class="nav-item"><a href="" class="nav-link">Test </a></li>
-
-          </ul>
-        </div>
-      </nav>
-      </div>
+        <body class="d-flex flex-column h-100">
+        
     <?php else : ?>
-      <div class="container">
-        <h2> Connectez vous</h2>
-      </div>
+      <body class="d-flex flex-column h-100 bg-light">
+        <div class="jumbotron">
+          <h1 class="text-center text-primary">Mj Vaubecourt Administrateur </h1>
+        </div>
+      </body>
     <?php endif; ?>
 
     <?= $content ?>

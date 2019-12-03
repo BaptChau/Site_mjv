@@ -38,7 +38,9 @@ $router
     ->post('/admin/conn','admin/panel/index','validUser')
 
     //Déconnexion
-
     ->get('/logout','admin/logout','logout')
+
+    //Pages Admin
+    ->get('/admin/dashboard','admin/panel/dashboard','dashboard')
 
     ->run();

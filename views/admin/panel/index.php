@@ -16,7 +16,9 @@ $user = $auth ->login($usrname,$pass);
 if ($user instanceof User) {
 
     if(session_id()){
-    //  dump($_POST);   
+        // dump($_SESSION['auth']);
+        // dump($user);
+        header('Location:'.$router->url('dashboard'));
     }
     else {
         header('Location:'.$router->url('index'));
