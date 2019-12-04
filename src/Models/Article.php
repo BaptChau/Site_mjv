@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Exception;
 use App\Base\Bdd;
 
 require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
@@ -98,7 +99,7 @@ class Article
                 ){
 
             throw new Exception("Certain champs sont vide", 11);
-            return fasle;
+            return false;
         }
 
         else{

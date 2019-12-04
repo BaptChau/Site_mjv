@@ -33,6 +33,8 @@ $router
     ->get('/news', 'mjv/newsLife','news')
     //Formulaire 
     ->get('/admin','admin/connexionAdm','adminPanel')
+    ->post('/admin/addUser/valid','admin/script/addUser','addUser')
+    ->post('/admin/allUser/delete','admin/script/deleteUser','deleteUser')
 
 
     //Validation de formulaire
@@ -45,5 +47,6 @@ $router
     //Pages Admin
     ->get('/admin/dashboard','admin/panel/dashboard','dashboard')
     ->get('/admin/addUser','admin/panel/ajoutUtilisateur','newUser')
+    ->get('/admin/allUser','admin/panel/viewAllUser','allUser')
 
     ->run();

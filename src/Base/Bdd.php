@@ -16,9 +16,6 @@ class Bdd
         $this->connexion = new PDO('mysql:host=localhost;dbname=mjv','root','',[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"]);
     }
 
-    
-
-
     /**
      * Get the value of connexion
      *
@@ -66,7 +63,7 @@ class Bdd
     }
 
     public function getAllNews(){
-        $sql = "SELECT * FROM news";
+        $sql = "SELECT * FROM news ORDER BY id_news DESC";
 
 
         return $sql;
@@ -88,12 +85,39 @@ class Bdd
 
         return $sql;
     }
+
+
+    public function createUser(){
+        $sql = "INSERT INTO user VALUES (?,?,?,?)";
+
+        return $sql;
+    }
+
+    public function deleteUser(){
+        $sql = "DELETE FROM user where `id_user` = '?'";
+
+        return $sql;
+    }
+
+    public function getAllUser(){
+        $sql = "SELECT id_user,identite, username FROM user";
+
+        return $sql;
+    }
+
     public function executeQuery(string $sql, array $params = []) :array {
         $stmt = $this->connexion->prepare($sql);
         $stmt->execute($params);
         $arr = $stmt->fetchAll();
 
         return $arr;
+    }
+
+    public function executeQueryNoReturn(string $sql, array $params = []) {
+        $stmt = $this->connexion->prepare($sql);
+         $stmt->execute($params);
+
+
     }
 
     

@@ -8,6 +8,7 @@ $news = $bd->executeQuery($bd->getAllNews());
 ?>
 <div class="container">
     <?php foreach ($news as $key => $value): ?>
+        <hr>
         <div class="jumbotron">
             <div class="card">
                 <div class="card-body">
@@ -22,6 +23,6 @@ $news = $bd->executeQuery($bd->getAllNews());
                 </div>
             </div>
         </div>
-        <hr>
+        
     <?php endforeach; ?>
 </div>

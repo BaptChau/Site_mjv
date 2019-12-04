@@ -11,7 +11,9 @@ $week = $date->format('W');
 $calpin = $con->executeQuery($con->getLast5Article());
 $news = $con->executeQuery($con->getLast5News());
 $results = $con->executeQuery($con->getResultsOfTheWeek(),[strval($week-1)]);
-
+if (session_status() === PHP_SESSION_ACTIVE) {
+    session_destroy();
+}
 ?>
 
 <div class="row">

@@ -20,13 +20,7 @@ class Auth
         $query->execute(['usrn'=>$username]);
         
         $user = $query->fetchObject(User::class);
-        // dump($password);
-        // dump(password_get_info($password));
-        // dump($user->password);
-        // dump(password_get_info($user->password));
-        // dump(\password_verify($user->password,$password));
 
-        // dump($user);
         //password_verify
         if ($user === false) {
             return null;
@@ -39,6 +33,7 @@ class Auth
         }  
         
         $_SESSION['auth'] = $user->id_user;
+        $_SESSION['__identite__'] = $user->identite;
         return $user;
     }
 

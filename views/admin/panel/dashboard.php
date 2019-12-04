@@ -15,6 +15,7 @@ if ($user === null) {
 }
 $article = $bdd->executeQuery($bdd->getLast5Article());
 $auteur = $bdd->executeQuery($bdd->getNewsByUser(), [$_SESSION['auth']]);
+// dump($_SESSION);
 // dump($auteur);
 ?>
 <div class="container">
