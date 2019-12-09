@@ -21,7 +21,6 @@ $router
     ->get('/equipe/u11masc', 'mjv/equipes/equipeU11masc', 'u11masc')
     ->get('/equipe/babyhand', 'mjv/equipes/babyhand', 'babyhand')
     //Routes pour le calepin
-    //Bug au moment de la soummision 
     //cause AltoRouter
     ->get('/calepin', 'mjv/calepin/calepinIndex', 'calepin')
     ->get('/calepin/new', 'mjv/calepin/newArticle', 'calepinNew')
@@ -35,6 +34,7 @@ $router
     ->get('/admin','admin/connexionAdm','adminPanel')
     ->post('/admin/addUser/valid','admin/script/addUser','addUser')
     ->post('/admin/allUser/delete','admin/script/deleteUser','deleteUser')
+    ->post('/admin/new/article','admin/script/addArticle','newArticle')
 
 
     //Validation de formulaire
@@ -48,5 +48,5 @@ $router
     ->get('/admin/dashboard','admin/panel/dashboard','dashboard')
     ->get('/admin/addUser','admin/panel/ajoutUtilisateur','newUser')
     ->get('/admin/allUser','admin/panel/viewAllUser','allUser')
-
+    ->get('/admin/addArticle','admin/panel/ajoutArticle','addArticle')
     ->run();

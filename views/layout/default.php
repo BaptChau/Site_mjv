@@ -1,5 +1,11 @@
 <?php
 require '../../vendor/autoload.php';
+if(!empty($_SESSION))
+dump($_SESSION);
+
+if (!empty($_COOKIE)) {
+  unset($_COOKIE);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr" class="h-100">
@@ -77,7 +83,7 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
 
     <?php
       if (session_id()) : ?>
-<?php dump($_SESSION) ?>
+<?php // dump($_COOKIE) ?>
       <body class="d-flex flex-column h-100">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -92,7 +98,7 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
                 <a class="nav-link" href="<?= $router->url('newUser') ?>">Ajouter Utilisateur </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Ajouter Article</a>
+                <a class="nav-link" href="<?= $router->url('addArticle') ?>">Ajouter Article</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Gestion Calepin</a>
@@ -122,15 +128,15 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
         <?php endif; ?>
 
         <?= $content ?>
+        <?php endif; ?>
+      </div>
+      <footer class="bg-light  footer mt-auto footer-copyright">
+        <div class="container col text-center">
+          Maison des Jeunes Vaubécourt &nbsp;
+          Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a>
         </div>
-        <footer class="bg-light  footer mt-auto footer-copyright">
-          <div class="container col text-center">
-            Maison des Jeunes Vaubécourt &nbsp;
-            Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a>
-          </div>
-        </footer>
+      </footer>
 
-      </body>
-    <?php endif; ?>
+    </body>
 
 </html>

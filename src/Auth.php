@@ -67,9 +67,9 @@ class Auth
 
     public function logout(){
 
-        if (session_status()=== PHP_SESSION_ACTIVE) {
             session_destroy();
-        }
+            unset($_COOKIE['PFPSESSID']);
+        
 
         
     }

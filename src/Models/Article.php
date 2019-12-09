@@ -87,6 +87,19 @@ class Article
         return $this;
     }
 
+    public function isValid() :bool {
+        if (gettype($this->getTitle()) === 'string' &&
+            gettype($this->getContent()=== 'string' &&
+            gettype($this->getAuthor() === 'integer')
+            )
+            ) {
+                return true;
+            
+        }
+
+        return false;
+    }
+
     public function save () : bool 
     {
         if ($this == null){
@@ -106,7 +119,7 @@ class Article
 
            $bdCon = $this->pdo->getConnexion();
 
-           $sql = "INSERT INTO calepin VALUES (NULL,? ,? ,?)";
+           $sql = "INSERT INTO news VALUES (NULL,? ,? ,?)";
            $stmt = $bdCon-> prepare($sql);
            $nText = $this->getContent();
            $nTitle = $this->getTitle();

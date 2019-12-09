@@ -80,6 +80,12 @@ class Bdd
 
     }
 
+    public function getLast5Results() :string {
+        $sql = "SELECT * FROM week_end_results ORDER BY id_results DESC LIMIT 5";
+
+        return $sql;
+    }
+
     public function getAuthor(){
         $sql = "SELECT identite FROM user where id_user = (SELECT auteur FROM news WHERE id_news = ?)";
 
@@ -94,7 +100,7 @@ class Bdd
     }
 
     public function deleteUser(){
-        $sql = "DELETE FROM user where `id_user` = '?'";
+        $sql = "DELETE FROM `user` WHERE id_user = ? ";
 
         return $sql;
     }
@@ -115,9 +121,9 @@ class Bdd
 
     public function executeQueryNoReturn(string $sql, array $params = []) {
         $stmt = $this->connexion->prepare($sql);
-         $stmt->execute($params);
+        $stmt->execute($params);
 
-
+        return $stmt;
     }
 
     
