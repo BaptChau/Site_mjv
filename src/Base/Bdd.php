@@ -42,7 +42,7 @@ class Bdd
 
     public function getNonValidArticle(){
 
-        $sql = "SELECT * FROM `calepin` WHERE adminValid = 0";
+        $sql = "SELECT * FROM `calepin` WHERE adminValid = false";
 
         return $sql;
     }
@@ -52,6 +52,11 @@ class Bdd
 
         return $sql;
     }
+
+    public function getReportedArticle():string{
+        $sql = "SELECT * FROM `calepin` WHERE `reported` = true";
+        return $sql;
+       }
 
     public function connexionUser($username, $password): bool
     {

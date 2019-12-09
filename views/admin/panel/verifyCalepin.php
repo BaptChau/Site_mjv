@@ -15,7 +15,9 @@ if ($user === null) {
 }
 
 $articleToValidate = $bdd->executeQuery($bdd->getNonValidArticle());
-// dump($articleToValidate);
+dump($articleToValidate);
+$articleToDelete = $bdd->executeQuery($bdd->getReportedArticle());
+dump($articleToDelete);
 ?>
 <br>
 <div class="container">
@@ -43,3 +45,30 @@ $articleToValidate = $bdd->executeQuery($bdd->getNonValidArticle());
         </tbody>
     </table>
 </div>
+
+
+<br>
+<div class="container">
+        <h1>Article validé :</h1>
+    <table class="table table-hover table-bordered">
+        <thead class="table-primary">
+        <tr>
+            <td>Titre</td>
+            <td>Contenu</td>
+            <td>Supprimer ?</td>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach($articleToDelete as $key => $value): ?>
+            <tr>
+                <td><?php echo $value['titre'] ?></td>
+                <td><?php echo $value['contenu'] ?></td>
+                <td>
+                 <a href="<?= $router->url('validCalepin',['id'=>$value['id_article']]) ?> " class="btn btn-success">Valider</a>
+                 <a href="" class="btn btn-danger">Supprimer</a>
+                    
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>

@@ -18,6 +18,8 @@ class Article
 
     private $validAdmin;
 
+    private $reported;
+
     private $pdo;
 
     public function __construct(string $titre, string $contenu, string $auteur, bool $validAdmin)
@@ -26,6 +28,7 @@ class Article
         $this->author = $auteur;
         $this->content = $contenu;
         $this->validAdmin = $validAdmin;
+        $this->reported = false;
         $this->pdo = new Bdd();
     }
 
@@ -122,7 +125,6 @@ class Article
 
         return false;
     }
-
 
     public function updateValidStatut(array $params){
         
