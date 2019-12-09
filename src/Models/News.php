@@ -120,6 +120,15 @@ class News {
         return false;
     }
 
+    
+    public function update(array $params){
+        if ($this->isValid()) {
+            $sql = "UPDATE `news` SET `contenu` = :contenu, `titre` = :titre WHERE `news`.`id_news` = :id  ";
+            $this->pdo->executeQuery($sql,$params);
+        }
+    }
+
+
     public function save() :bool {
         if ($this == null){
             throw new Exception("Erreur article vide", 12);

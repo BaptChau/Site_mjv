@@ -81,6 +81,12 @@ class Bdd
         return $sql;
     }
 
+    public function getNewsById():string{
+        $sql = "SELECT * FROM news WHERE id_news = ?";
+        
+        return $sql;
+    }
+
     public function getResultsOfTheWeek() :string {
         $sql = "SELECT * from week_end_results where weekofyear(`weekend`) = ?";
         return $sql;

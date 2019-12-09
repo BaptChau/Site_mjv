@@ -33,7 +33,7 @@ $allNews = $bdd->executeQuery($bdd->getAllNews());
                 <td><?php echo $value['titre'] ?></td>
                 <td><?php echo $value['contenu'] ?></td>
                 <td>
-                    <a href="" class="btn btn-info">Editer</a>
+                    <a href="<?= $router->url('editArticle',['id'=>$value['id_news']]) ?>" class="btn btn-info">Editer</a>
                     <a href="" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>

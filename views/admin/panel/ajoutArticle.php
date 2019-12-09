@@ -13,14 +13,16 @@ if ($user === null) {
     // dump($user);
     header('Location:' . $router->url('index'));
 }
-
+if (isset($_POST)) {
+    dump($_POST);
+}
 ?>
 
 
 <div class="container">
     <form action="<?= $router->url('newArticle',$_POST) ?>" method="post">
 
-        <label for="titre">Titre de l'article</label>
+        <label for="titre">Titre de l'article<?php echo 'tets'; ?></label>
         <input type="text" name="titre" id="titre" class="form-control">
         <label for="contenu">Corps de l'article</label>
         <textarea name="contenu" id="contenu" cols="30" rows="10" class="form-control"></textarea>
