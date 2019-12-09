@@ -15,10 +15,11 @@ if ($user === null) {
 }
 
 $articleToValidate = $bdd->executeQuery($bdd->getNonValidArticle());
-dump($articleToValidate);
+// dump($articleToValidate);
 ?>
-
+<br>
 <div class="container">
+        <h1>Article à valider :</h1>
     <table class="table table-hover table-bordered">
         <thead class="table-primary">
         <tr>
@@ -29,7 +30,15 @@ dump($articleToValidate);
         </thead>
         <tbody>
         <?php foreach($articleToValidate as $key => $value): ?>
-
+            <tr>
+                <td><?php echo $value['titre'] ?></td>
+                <td><?php echo $value['contenu'] ?></td>
+                <td>
+                 <a href="" class="btn btn-success">Valider</a>
+                 <a href="" class="btn btn-danger">Supprimer</a>
+                    
+                </td>
+            </tr>
         <?php endforeach; ?>
         </tbody>
     </table>

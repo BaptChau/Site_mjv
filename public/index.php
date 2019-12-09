@@ -50,4 +50,8 @@ $router
     ->get('/admin/allUser','admin/panel/viewAllUser','allUser')
     ->get('/admin/addArticle','admin/panel/ajoutArticle','addArticle')
     ->get('/admin/checkCalepin','admin/panel/verifyCalepin','verifCalpin')
+    ->get('/admin/reviewNews','admin/panel/gestNewsFeed', 'verifNews')
+
+
+
     ->run();

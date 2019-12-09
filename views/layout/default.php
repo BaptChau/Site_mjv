@@ -1,7 +1,7 @@
 <?php
 require '../../vendor/autoload.php';
 if(!empty($_SESSION))
-dump($_SESSION);
+// dump($_SESSION);
 
 if (!empty($_COOKIE)) {
   unset($_COOKIE);
@@ -104,7 +104,7 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
                 <a class="nav-link" href="<?= $router->url('verifCalpin') ?>">Gestion Calepin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Gestion Feed News</a>
+                <a class="nav-link" href="<?= $router->url('verifNews') ?>">Gestion Feed News</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="<?= $router->url('allUser') ?>">Liste Utilisateur</a>

@@ -25,7 +25,7 @@ if ($user === null) {
         <label for="contenu">Corps de l'article</label>
         <textarea name="contenu" id="contenu" cols="30" rows="10" class="form-control"></textarea>
         <br>
-        <input type="text" name="auteur"  value="<?php echo $user->id_user ?>">
+        <input type="text" name="auteur" hidden value="<?php echo $user->id_user ?>">
         <button type="submit" class="btn btn-success ">Ajouter</button>
 
     </form>
