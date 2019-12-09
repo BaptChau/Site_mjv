@@ -1,14 +1,15 @@
 <?php
 
-use App\Models\Article;
-
+use App\Models\News;
 
 $title = $_POST['titre'];
 $contenu = $_POST['contenu'];
-$auteur = $_POST['auteur'];
+$auteur = intval($_POST['auteur']);
 
-$article = new Article($title,$contenu,$auteur);
+$article = new News($title,$contenu,$auteur);
+// dump($article);
 // dump($article->isValid());
+
 if ($article->isValid()) {
     $article->save();
     

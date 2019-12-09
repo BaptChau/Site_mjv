@@ -27,16 +27,23 @@ class Bdd
     }
 
     public function getArticle(){
-        $req = "SELECT * FROM `calepin` order by id_article DESC ";
+        $req = "SELECT * FROM `calepin` WHERE adminValid = 1 order by id_article DESC ";
 
         return $req;
     }
     
     public function getLast5Article(){
-        $req = "SELECT * FROM `calepin` ORDER BY id_article DESC LIMIT 5 ";
+        $req = "SELECT * FROM `calepin` WHERE adminValid = 1 ORDER BY id_article DESC LIMIT 5 ";
       
 
         return $req;
+    }
+
+    public function getNonValidArticle(){
+
+        $sql = "SELECT * FROM `calepin` WHERE adminValid = 0";
+
+        return $sql;
     }
 
     public function connexionUser($username, $password): bool
@@ -57,7 +64,7 @@ class Bdd
     }
 
     public function getNewsByUser(){
-        $sql = "SELECT * FROM news WHERE auteur = ? ";
+        $sql = "SELECT * FROM news WHERE auteur = ? ORDER BY id_news DESC";
 
         return $sql;
     }

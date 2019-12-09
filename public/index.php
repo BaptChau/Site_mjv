@@ -49,4 +49,5 @@ $router
     ->get('/admin/addUser','admin/panel/ajoutUtilisateur','newUser')
     ->get('/admin/allUser','admin/panel/viewAllUser','allUser')
     ->get('/admin/addArticle','admin/panel/ajoutArticle','addArticle')
+    ->get('/admin/checkCalepin','admin/panel/verifyCalepin','verifCalpin')
     ->run();

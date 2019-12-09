@@ -16,13 +16,16 @@ class Article
     
     private $content;
 
+    private $validAdmin;
+
     private $pdo;
 
-    public function __construct(string $titre, string $contenu, string $auteur)
+    public function __construct(string $titre, string $contenu, string $auteur, bool $validAdmin)
     {
         $this->title = $titre;
         $this->author = $auteur;
         $this->content = $contenu;
+        $this->validAdmin = $validAdmin;
         $this->pdo = new Bdd();
     }
 
@@ -87,11 +90,31 @@ class Article
         return $this;
     }
 
+    /**
+     * Get the value of validAdmin
+     */ 
+    public function getValidAdmin()
+    {
+        return $this->validAdmin;
+    }
+
+    /**
+     * Set the value of validAdmin
+     *
+     * @return  self
+     */ 
+    public function setValidAdmin($validAdmin)
+    {
+        $this->validAdmin = $validAdmin;
+
+        return $this;
+    }
+
     public function isValid() :bool {
         if (gettype($this->getTitle()) === 'string' &&
-            gettype($this->getContent()=== 'string' &&
-            gettype($this->getAuthor() === 'integer')
-            )
+            gettype($this->getContent()) === 'string' &&
+            gettype($this->getAuthor()) === 'integer'
+            
             ) {
                 return true;
             
@@ -119,14 +142,16 @@ class Article
 
            $bdCon = $this->pdo->getConnexion();
 
-           $sql = "INSERT INTO news VALUES (NULL,? ,? ,?)";
+           $sql = "INSERT INTO `calepin` VALUES (NULL,? ,? ,?,?)";
            $stmt = $bdCon-> prepare($sql);
            $nText = $this->getContent();
            $nTitle = $this->getTitle();
            $nAuthor = $this->getAuthor();
+           $validAdmin = $this->getValidAdmin() ? '1':'0';
+           dump($this);
             try {
                 //code...
-                $arr = array($nTitle,$nText,$nAuthor);
+                $arr = array($nTitle,$nText,$nAuthor,$validAdmin);
                 $bool = $stmt -> execute($arr);
                 // var_dump($bool);
                 // dump($arr);
@@ -139,6 +164,8 @@ class Article
 
         return false;
     }
+
+    
 }
 
 // $art = new Article('Test Obj','text test Obj','Bapt');
