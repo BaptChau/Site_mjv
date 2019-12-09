@@ -18,7 +18,7 @@ $id_news = substr(strstr($_SERVER['REQUEST_URI'],'id'),3);
 
 $newsToEdit = $bdd->executeQuery($bdd->getNewsById(),[$id_news])[0];
 
-dump($newsToEdit);
+// dump($newsToEdit);
 ?>
 
 

@@ -123,6 +123,15 @@ class Article
         return false;
     }
 
+
+    public function updateValidStatut(array $params){
+        
+            $sql = "UPDATE `calepin` SET `adminValid` = :valid WHERE `calepin`.`id_article` = :id  ";
+            $this->pdo->executeQuery($sql,$params);
+        
+
+    }
+
     public function save () : bool 
     {
         if ($this == null){

@@ -34,7 +34,7 @@ $articleToValidate = $bdd->executeQuery($bdd->getNonValidArticle());
                 <td><?php echo $value['titre'] ?></td>
                 <td><?php echo $value['contenu'] ?></td>
                 <td>
-                 <a href="" class="btn btn-success">Valider</a>
+                 <a href="<?= $router->url('validCalepin',['id'=>$value['id_article']]) ?> " class="btn btn-success">Valider</a>
                  <a href="" class="btn btn-danger">Supprimer</a>
                     
                 </td>

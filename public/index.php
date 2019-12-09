@@ -41,10 +41,9 @@ $router
     ->post('/calepin/new/validator','mjv/calepin/validator','articleValid')
     ->post('/admin/conn','admin/panel/index','validUser')
     ->post('/admin/edit/ok','admin/script/updateArticle','saveEditedArticle')
-
     //Déconnexion
     ->get('/logout','admin/logout','logout')
-
+    
     //Pages Admin
     ->get('/admin/dashboard','admin/panel/dashboard','dashboard')
     ->get('/admin/addUser','admin/panel/ajoutUtilisateur','newUser')
@@ -53,7 +52,8 @@ $router
     ->get('/admin/checkCalepin','admin/panel/verifyCalepin','verifCalpin')
     ->get('/admin/reviewNews','admin/panel/gestNewsFeed', 'verifNews')
     ->get('/admin/editArticle/id=[i:id]','admin/panel/editArticle', 'editArticle')
-
-
+    ->get('/admin/validCalepin/id=[i:id]','admin/script/calepin/validateCalepin','validCalepin')
+    
+    
 
     ->run();

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Base;
+
 use \PDO;
 
 class Bdd
@@ -42,6 +43,12 @@ class Bdd
     public function getNonValidArticle(){
 
         $sql = "SELECT * FROM `calepin` WHERE adminValid = 0";
+
+        return $sql;
+    }
+
+    public function getArticleById():string{
+        $sql = "SELECT * FROM `calepin` WHERE id_article = ?";
 
         return $sql;
     }
@@ -128,6 +135,14 @@ class Bdd
         $stmt = $this->connexion->prepare($sql);
         $stmt->execute($params);
         $arr = $stmt->fetchAll();
+
+        return $arr;
+    }
+
+    public function executeQueryReturnObject(string $sql, array $params = []){
+        $stmt = $this->connexion->prepare($sql);
+        $stmt->execute($params);
+        $arr = $stmt->fetchObject();
 
         return $arr;
     }

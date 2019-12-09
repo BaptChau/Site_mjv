@@ -13,9 +13,6 @@ if ($user === null) {
     // dump($user);
     header('Location:' . $router->url('index'));
 }
-if (isset($_POST)) {
-    dump($_POST);
-}
 ?>
 
 
