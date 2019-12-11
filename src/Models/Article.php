@@ -128,10 +128,16 @@ class Article
 
     public function updateValidStatut(array $params){
         
-            $sql = "UPDATE `calepin` SET `adminValid` = :valid WHERE `calepin`.`id_article` = :id  ";
-            $this->pdo->executeQuery($sql,$params);
+        $sql = "UPDATE `calepin` SET `adminValid` = :valid WHERE `calepin`.`id_article` = :id  ";
+        $this->pdo->executeQuery($sql,$params);
         
 
+    }
+
+
+    public function updateReportedStatut(array $params){
+        $sql = "UPDATE `calepin` SET `reported` = :report WHERE `calepin`.`id_article` = :id  ";
+        $this->pdo->executeQuery($sql,$params);
     }
 
     public function unValidArticle(array $params){

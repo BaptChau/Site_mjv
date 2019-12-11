@@ -7,9 +7,17 @@ $bdd = new Bdd();
 $id_news = substr(strstr($_SERVER['REQUEST_URI'],'id='),3);
 
 $newsToEdit = $bdd->executeQueryReturnObject($bdd->getArticleById(),[$id_news]);
-
-$article = new Article($newsToEdit->titre,$newsToEdit->contenu,$newsToEdit->auteur,$newsToEdit->adminValid);
-if($article->adminValid){
+// dump($newsToEdit);
+// exit();
+$admin = null;
+if ($newsToEdit->adminValid == 0) {
+    $admin = false;
+}
+elseif ($newsToEdit->adminValid == 1) {
+    $admin = true;
+}
+$article = new Article($newsToEdit->titre,$newsToEdit->contenu,$newsToEdit->auteur,$admin);
+if($admin){
     $article->updateValidStatut([':valid'=>false,':id'=>strval($id_news)]);
 
 }

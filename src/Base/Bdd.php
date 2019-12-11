@@ -58,6 +58,11 @@ class Bdd
         return $sql;
        }
 
+       public function getReportedArticleById():string{
+        $sql = "SELECT * FROM `calepin` WHERE `reported` = true and id_article = ?";
+        return $sql;
+       }
+
     public function connexionUser($username, $password): bool
     {
         $sql = "SELECT id_user from user where username = ? AND `password` = ?  ";

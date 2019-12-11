@@ -54,6 +54,9 @@ $router
     ->get('/admin/editArticle/id=[i:id]','admin/panel/editArticle', 'editArticle')
     ->get('/admin/validCalepin/id=[i:id]','admin/script/calepin/validateCalepin','validCalepin')
     ->get('/admin/unvalidCalepin/id=[i:id]','admin/script/calepin/unValidCalepin','unvalidCalepin')
+    ->get('/admin/reportedDelete/id=[i:id]','admin/script/calepin/reported/unValidateReported','delReportCalepin')
+    ->get('/admin/reportedAccept/id=[i:id]','admin/script/calepin/reported/validateReported','validReportCalepin')
+
 
     
     
