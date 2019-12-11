@@ -63,6 +63,7 @@ class Bdd
         return $sql;
        }
 
+
     public function connexionUser($username, $password): bool
     {
         $sql = "SELECT id_user from user where username = ? AND `password` = ?  ";

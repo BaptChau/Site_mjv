@@ -22,7 +22,7 @@ class Article
 
     private $pdo;
 
-    public function __construct(string $titre, string $contenu, string $auteur, bool $validAdmin)
+    public function __construct(string $titre, string $contenu, string $auteur, bool $validAdmin = false)
     {
         $this->title = $titre;
         $this->author = $auteur;

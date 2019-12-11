@@ -24,9 +24,10 @@ $arr = $base->executeQuery($base->getArticle());
         <div class="jumbotron">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo ($value['titre']) ?></h5>
+                    <h5 class="card-title"><?php echo ($value['titre']) ?> <a href="<?= $router->url('calepinReport',['id'=>$value['id_article']]) ?>" class="badge badge-pill badge-danger" > Signaler</a></h5>
                     <h6 class="card-subtitle mb-2 text-muted"><?php echo ($value['auteur']) ?></h6>
-                    <p class="card-text"><?php echo nl2br(htmlspecialchars($value['contenu'])) ?></p>
+                    <p class="card-text"><?php echo nl2br(htmlspecialchars($value['contenu']) )?></p>
+                    <span class="badge badge-pill badge-light"><?php if($value['reported'] == 1) echo 'Cet Article a été signalé !' ?></span>
                 </div>
             </div>
         </div>

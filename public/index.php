@@ -21,9 +21,9 @@ $router
     ->get('/equipe/u11masc', 'mjv/equipes/equipeU11masc', 'u11masc')
     ->get('/equipe/babyhand', 'mjv/equipes/babyhand', 'babyhand')
     //Routes pour le calepin
-    //cause AltoRouter
     ->get('/calepin', 'mjv/calepin/calepinIndex', 'calepin')
     ->get('/calepin/new', 'mjv/calepin/newArticle', 'calepinNew')
+    ->get('/calepin/report/id=[i:id]','mjv/calepin/report','calepinReport')
     //Route à propos
     ->get('/a-propos', 'mjv/aPropos', 'about')
     //Route contact
