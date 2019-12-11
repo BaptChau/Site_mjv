@@ -53,6 +53,8 @@ $router
     ->get('/admin/reviewNews','admin/panel/gestNewsFeed', 'verifNews')
     ->get('/admin/editArticle/id=[i:id]','admin/panel/editArticle', 'editArticle')
     ->get('/admin/validCalepin/id=[i:id]','admin/script/calepin/validateCalepin','validCalepin')
+    ->get('/admin/unvalidCalepin/id=[i:id]','admin/script/calepin/unValidCalepin','unvalidCalepin')
+
     
     
 

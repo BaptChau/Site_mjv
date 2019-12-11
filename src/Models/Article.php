@@ -134,6 +134,12 @@ class Article
 
     }
 
+    public function unValidArticle(array $params){
+        $sql = "DELETE FROM `calepin` WHERE `id_article` = :id";
+
+        $this->pdo->executeQuery($sql,$params);
+    }
+
     public function save () : bool 
     {
         if ($this == null){

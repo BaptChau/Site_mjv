@@ -37,7 +37,7 @@ dump($articleToDelete);
                 <td><?php echo $value['contenu'] ?></td>
                 <td>
                  <a href="<?= $router->url('validCalepin',['id'=>$value['id_article']]) ?> " class="btn btn-success">Valider</a>
-                 <a href="" class="btn btn-danger">Supprimer</a>
+                 <a href="<?= $router->url('unvalidCalepin',['id'=>$value['id_article']]) ?>" class="btn btn-danger">Supprimer</a>
                     
                 </td>
             </tr>
