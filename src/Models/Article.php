@@ -153,16 +153,18 @@ class Article
 
            $bdCon = $this->pdo->getConnexion();
 
-           $sql = "INSERT INTO `calepin` VALUES (NULL,? ,? ,?,?)";
+           $sql = "INSERT INTO `calepin` VALUES (NULL,? ,? ,?,?,?)";
            $stmt = $bdCon-> prepare($sql);
            $nText = $this->getContent();
            $nTitle = $this->getTitle();
            $nAuthor = $this->getAuthor();
            $validAdmin = $this->getValidAdmin() ? '1':'0';
+           $isReported = $this->getReported()? '1':'0';
+           
            dump($this);
             try {
                 //code...
-                $arr = array($nTitle,$nText,$nAuthor,$validAdmin);
+                $arr = array($nTitle,$nText,$nAuthor,$validAdmin,$isReported);
                 $bool = $stmt -> execute($arr);
                 // var_dump($bool);
                 // dump($arr);
@@ -177,6 +179,26 @@ class Article
     }
 
     
+
+    /**
+     * Get the value of reported
+     */ 
+    public function getReported()
+    {
+        return $this->reported;
+    }
+
+    /**
+     * Set the value of reported
+     *
+     * @return  self
+     */ 
+    public function setReported($reported)
+    {
+        $this->reported = $reported;
+
+        return $this;
+    }
 }
 
 // $art = new Article('Test Obj','text test Obj','Bapt');

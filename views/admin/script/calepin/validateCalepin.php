@@ -2,7 +2,6 @@
 
 use App\Base\Bdd;
 use App\Models\Article;
-use App\Models\News;
 
 $bdd = new Bdd();
 $id_news = substr(strstr($_SERVER['REQUEST_URI'],'id='),3);
