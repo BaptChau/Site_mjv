@@ -12,5 +12,11 @@ class Entrainement extends Bdd{
         return $this->executeQuery($sql);
     }
 
+    public function getEquipe(){
+        $sql = "SELECT equipe from entrainement";
+
+        return $this->executeQuery($sql);
+    }
+
 
 }

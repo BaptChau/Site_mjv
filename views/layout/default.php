@@ -109,6 +109,9 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
               <li class="nav-item">
                 <a class="nav-link" href="<?= $router->url('allUser') ?>">Liste Utilisateur</a>
               </li>
+              <li class="nav-item">
+                <a href="<?= $router->url('createResult'); ?>" class="nav-link">Résultats du Weekend</a>
+              </li>
               <li class="form-inline ">
                 <a href="<?= $router->url('logout') ?>" class="btn btn-warning">Déconnexion</a>
               </li>
