@@ -10,7 +10,7 @@ class Bdd
      * 
      * @var PDO
      */
-    private $connexion;
+    protected $connexion;
 
     public function __construct()
     {

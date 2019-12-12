@@ -1,3 +1,13 @@
+<?php
+
+use App\Models\Entrainement;
+
+$entrainement = new Entrainement();
+
+$tabEntrainement = $entrainement->getAll();
+
+?>
+
 <div class="container">
     <p>Le club a été crée en 1970 dans le village de vaubecourt et à tout de suite eu le nom que l'on connais</p>
     <p>Ajourd'hui le club est présidé par Fabien Obara et la secrétaire et Catherine Michelot</p>
@@ -18,12 +28,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Sénior Masculin</td>
-                    <td>Luc Chaudron</td>
-                    <td>21h15-22h45</td>
-                    
-                </tr>
+                <?php foreach($tabEntrainement as $key => $value): ?>
+                    <tr>
+                        <td>
+                            <?= $value['equipe'] ?>
+                        </td>
+                        <td>
+                            <?= $value['coach'] ?>
+                        </td>
+                        <td>
+                            <?= $value['horraire'] ?>
+                        </td>
+                    </tr>
+                <?php endforeach;?>
             </tbody>
         </table>
     </div>
