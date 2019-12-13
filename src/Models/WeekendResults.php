@@ -18,4 +18,9 @@ class WeekendResults extends Bdd{
         $this->executeQuery($sql,[$id]);
     }
 
+    public function read(){
+        $sql = "SELECT * FROM week_end_results";
+       return $this->executeQuery($sql);
+    }
+
 }

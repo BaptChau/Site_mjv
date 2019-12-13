@@ -58,6 +58,8 @@ $router
     ->get('/admin/reportedDelete/id=[i:id]','admin/script/calepin/reported/unValidateReported','delReportCalepin')
     ->get('/admin/reportedAccept/id=[i:id]','admin/script/calepin/reported/validateReported','validReportCalepin')
     ->get('/admin/results','admin/panel/weekendResults','createResult')
+    ->get('/admin/results/show','admin/panel/gestionResult','gestionResult')
+
 
     
     
