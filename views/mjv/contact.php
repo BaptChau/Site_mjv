@@ -1,4 +1,4 @@
-<form action="#" method="post">
+<form action="<?= $router->url('submitAsk',$_POST) ?>" method="post">
     <div class="row">
         <div class="col">
             <br>

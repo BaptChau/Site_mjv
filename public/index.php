@@ -42,6 +42,8 @@ $router
     ->post('/admin/conn','admin/panel/index','validUser')
     ->post('/admin/edit/ok','admin/script/updateArticle','saveEditedArticle')
     ->post('/admin/results/submit','admin/script/weekendResults/createResults','submitResults')
+    ->post('/contact/send','admin/script/contact/submitAsk','submitAsk')
+
     //Déconnexion
     ->get('/logout','admin/logout','logout')
     
