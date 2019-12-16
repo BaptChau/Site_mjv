@@ -10,21 +10,21 @@ $mail = new PHPMailer(true);
 try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-    $mail->isSMTP();                                            // Send using SMTP
+    $mail->isMail();                                            // Send using SMTP
     $mail->Host       = 'localhost';                    // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->SMTPAuth   = false;                                   // Enable SMTP authentication
     $mail->Username   = 'user@example.com';                     // SMTP username
     $mail->Password   = 'secret';                               // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 25;                                    // TCP port to connect to
-
+    $mail->Mailer = 'mail';
     //Recipients
-    $mail->setFrom('johnDoe@gmail.com', 'John Doe');
-    $mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
-    $mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('info@example.com', 'Information');
-    $mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');
+    $mail->setFrom('contact@mjv.fr', 'MJV CONTACT');
+    $mail->addAddress('chaudron964@gmail.com', 'Baptiste Chaudron');     // Add a recipient
+    // $mail->addAddress('ellen@example.com');               // Name is optional
+    // $mail->addReplyTo('info@example.com', 'Information');
+    // $mail->addCC('cc@example.com');
+    // $mail->addBCC('bcc@example.com');
 
     // Attachments
     // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -35,8 +35,9 @@ try {
     $mail->Subject = 'Here is the subject';
     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    $mail->send();
+$mail->preSend();
+ $send_to = $mail->getToAddresses()[0][0] ;
+    imap_mail($send_to,$mail->Subject,$mail->Body);
     echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

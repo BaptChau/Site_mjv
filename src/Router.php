@@ -24,7 +24,7 @@ class Router
 
         $this->viewPath = $viewPath;
         $this->router = new \AltoRouter();
-        // $this->router->setBasePath('sitePerso/');
+        // $this->router->setBasePath('public/index.php');
     }
 
     public function get(string $url, string $view, ?string $name = null): self

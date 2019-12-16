@@ -62,7 +62,8 @@ $router
     ->get('/admin/results','admin/panel/weekendResults','createResult')
     ->get('/admin/results/show','admin/panel/gestionResult','gestionResult')
 
-
+    //Echo du phpinfo
+    ->get('/phpinfo','info/info','info')
     
     
 
