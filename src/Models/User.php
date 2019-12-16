@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Base\Bdd;
+
 
 class User
 {
@@ -34,5 +34,4 @@ class User
      * @var int 
      */
     public $id_user;
-    
 }
