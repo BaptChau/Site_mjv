@@ -41,11 +41,7 @@ $arr = $bdd->executeQuery($bdd->getAllUser());
                     </td>
                     <td>
                         <?php if($value['id_user'] === $user->id_user):?>
-                        <a class="btn btn-info" data-toggle="modal" data-target="#changeMdp" >Changer mot de passe</a>
                         <a class="btn btn-danger" href="" data-toggle="modal" data-target="#suppAccount" >Supprimer</a>
-                        <?php else:?>
-                        <a class="btn btn-danger" data-toggle="modal" data-target="#askDelete" >Demander Suppréssion</a>
-
                         <?php endif; ?>
                     </td>
                 </tr>
@@ -54,69 +50,7 @@ $arr = $bdd->executeQuery($bdd->getAllUser());
     </table>
 </div>
 
-<div class="modal" id="changeMdp">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Changer le mot de passe</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col">
-                        <form action="" method="post">
-                            <label for="">Ancien mot de passe :</label>
-                            <input type="text" name="oldPass" class="form-control-sm">
-                            <label for="">Nouveau mot de passe :</label>
-                            <input type="password" name="newPass" class="form-control-sm">
-                            <label for="">Confirmation du nouveau :</label>
-                            <input type="password" name="newPassConf" class="form-control-sm">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button>
-                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
-
-
-<div class="modal" id="askDelete">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Changer le mot de passe</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col">
-                        <form action="" method="post">
-                            <label for="">Demande de suppréssion:</label>
-                            <select name="cause" id="" class="form-control-sm">
-                                <option value="1">Plus au club</option>
-                                <option value="2">Piratage</option>
-                                <option value="3">Oublie mot de passe</option>
-                            </select>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button>
-                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 

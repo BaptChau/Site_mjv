@@ -160,9 +160,8 @@ class Bdd
 
     public function executeQueryNoReturn(string $sql, array $params = []) {
         $stmt = $this->connexion->prepare($sql);
-        $stmt->execute($params);
+       return $stmt->execute($params);
 
-        return $stmt;
     }
 
     

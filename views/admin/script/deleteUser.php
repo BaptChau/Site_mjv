@@ -10,8 +10,15 @@ if ($_POST['delete'] !== strval(1)) {
 }
 
 else{
+    // dump(intval([$_POST['delete']]));
+    if($bdd->executeQueryNoReturn($bdd->deleteUser(),[$_POST['id_user']])){
+        header('Location:'.$router->url('index'));
+
+    }
+    else{
+    header('Location:'.$router->url('allUser'));
+
+    }
     
-dump(  $bdd->executeQueryNoReturn($bdd->deleteUser(),[intval([$_POST['delete']])]));
-    header('Location:'.$router->url('index'));
     
 }
