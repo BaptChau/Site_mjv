@@ -1,5 +1,5 @@
 <?php
-// require '../../vendor/autoload.php';
+require '../vendor/autoload.php';
 if(!empty($_SESSION))
 // dump($_SESSION);
 
