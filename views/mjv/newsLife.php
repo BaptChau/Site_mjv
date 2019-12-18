@@ -21,7 +21,8 @@ $resultWeeks = $bd->executeQuery($bd->getLast5Results());
                             <h6 class="card-subtitle mb-2 text-muted">
                                 <?php
                                     $auth = ($bd->executeQuery($bd->getAuthor(), [$value['id_news']]));
-                                    echo ($auth['0']['identite']);
+                                    $auteur = $auth['0']['identite'] ?? '';
+                                    echo ($auteur);
                                     ?>
                             </h6>
                             <p class="card-text"><?php echo nl2br(htmlspecialchars($value['contenu'])) ?></p>
