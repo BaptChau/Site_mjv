@@ -3,7 +3,6 @@
 
 use App\Base\Bdd;
 
-use function PHPSTORM_META\type;
 
 $con = new Bdd();
 $date = new DateTime();

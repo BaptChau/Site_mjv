@@ -1,5 +1,5 @@
 <?php
-require '../../vendor/autoload.php';
+// require '../../vendor/autoload.php';
 if(!empty($_SESSION))
 // dump($_SESSION);
 
@@ -15,7 +15,7 @@ if (!empty($_COOKIE)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css">
-
+  <script src="https://kit.fontawesome.com/e0720040a0.js" crossorigin="anonymous"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -146,7 +146,8 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
       <footer class="bg-light  footer mt-auto footer-copyright">
         <div class="container col text-center">
           Maison des Jeunes Vaubécourt &nbsp;
-          Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a>
+          Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a> &nbsp;
+          <a href="https://www.facebook.com/MJ-Vaub%C3%A9court-154806714531516/" target="_blank" ><i class="fab fa-facebook-square" style="color:blue"></i></a>
         </div>
       </footer>
 
