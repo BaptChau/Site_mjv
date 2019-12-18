@@ -25,11 +25,15 @@ $tab = $result->read();
 <div class="container">
     <br>
     <?php foreach ($tab as $key => $value) : ?>
+    <form action="<?= $router->url('deleteWeekend',$_POST)?>" method="post">
         <div class="card border-success mb-3" style="max-width: 20rem;">
             <div class="card-header"><?= $value['weekend'] ?></div>
             <div class="card-body">
                 <p class="card-text"><?= $value['results'] ?></p>
             </div>
+            <input name="id" type="text" value="<?= $value['id_results']?>" hidden >
+            <button type="submit" class="btn btn-danger" >Supprimer</button>
         </div>
+        </form>
     <?php endforeach; ?>
 </div>

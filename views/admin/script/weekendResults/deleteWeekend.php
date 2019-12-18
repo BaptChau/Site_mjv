@@ -16,11 +16,8 @@ if ($user === null) {
 }
 
 $data = $_POST;
-
-
-$weekend = new WeekendResults();
-
-$weekend->create($_POST['date'],$_POST['results']);
+// dump($data);
+$results = new WeekendResults();
+$results->delete($data['id']);
 
 header('Location:'.$router->url('gestionResult'));
-
