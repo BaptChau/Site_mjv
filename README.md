@@ -15,5 +15,6 @@ Le projet utilisable sur WAMP et avec la commande suivante :
 - Optimisation des visuel
 - Ajout d'un captcha pour substituer la validation admin
 - Création d'un super admin pour une gestion global des utilisateur
+- Implémentation d'un formulaire de contact
 
 Par Baptiste Chaudron
