@@ -145,7 +145,7 @@ class Bdd
     public function executeQuery(string $sql, array $params = []) :array {
         $stmt = $this->connexion->prepare($sql);
         $stmt->execute($params);
-        $arr = $stmt->fetchAll();
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $arr;
     }

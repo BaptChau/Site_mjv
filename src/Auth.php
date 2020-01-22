@@ -18,7 +18,7 @@ class Auth
         $query = $this->pdo->prepare('SELECT * FROM user where username = :usrn');
         //user correspondant unsername
         $query->execute(['usrn'=>$username]);
-        
+
         $user = $query->fetchObject(User::class);
 
         //password_verify
@@ -30,8 +30,8 @@ class Auth
             \session_start();
             $_SESSION['__id__'] = session_id();
 
-        }  
-        
+        }
+
         $_SESSION['auth'] = $user->id_user;
         $_SESSION['__identite__'] = $user->identite;
         return $user;
@@ -41,8 +41,7 @@ class Auth
     }
 
     public function user(): ?User{
-
-        if (session_status() === PHP_SESSION_NONE) {
+      if (session_status() === PHP_SESSION_NONE) {          
             session_start();
             $_SESSION['__id__'] = session_id();
         }
@@ -56,7 +55,6 @@ class Auth
         $query = $this->pdo->prepare('SELECT * FROM user where id_user = ?');
         //user correspondant unsername
         $query->execute([$id]);
-        
         $user = $query->fetchObject(User::class);
         // dump($user);
         // dump($id);
@@ -69,8 +67,5 @@ class Auth
 
             session_destroy();
             unset($_COOKIE['PFPSESSID']);
-        
-
-        
     }
 }

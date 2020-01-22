@@ -1,11 +1,14 @@
 <?php
-require '../vendor/autoload.php';
-if(!empty($_SESSION))
-// dump($_SESSION);
 
-if (!empty($_COOKIE)) {
-  unset($_COOKIE);
-}
+use App\Models\Link;
+
+require '../vendor/autoload.php';
+if (!empty($_SESSION))
+  // dump($_SESSION);
+
+  if (!empty($_COOKIE)) {
+    unset($_COOKIE);
+  } 
 ?>
 <!DOCTYPE html>
 <html lang="fr" class="h-100">
@@ -25,7 +28,7 @@ if (!empty($_COOKIE)) {
 </head>
 <?php
 if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUEST_URI'])) :
-  ?>
+?>
 
   <body class="d-flex flex-column h-100">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -84,12 +87,14 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
 
 
     <?php
-      if (session_id()) : ?>
-<?php // dump($_COOKIE) ?>
+    if (session_id()) : ?>
+      <?php // dump($_COOKIE) 
+      ?>
+
       <body class="d-flex flex-column h-100">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand" href="<?= $router->url('dashboard') ?>">Admin <?php echo$_SESSION['__identite__'] ?></a>
+          <a class="navbar-brand" href="<?= $router->url('dashboard') ?>">Admin <?php echo $_SESSION['__identite__'] ?></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -108,20 +113,19 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
               <li class="nav-item">
                 <a class="nav-link" href="<?= $router->url('verifNews') ?>">Gestion Feed News</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= $router->url('allUser') ?>">Liste Utilisateur</a>
               </li>
-
+<li class="nav-item">
+  <a href="<?= $router->url('allLink')?>" class="nav-link">Gestion des liens</a></li>
               <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-              Résultats du Weekend
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="<?= $router->url('createResult') ?>">Résultats du Weekend</a>
-              <a class="dropdown-item" href="<?= $router->url('gestionResult') ?>">Gestion Résultat</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                  Résultats du Weekend
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="<?= $router->url('createResult') ?>">Résultats du Weekend</a>
+                  <a class="dropdown-item" href="<?= $router->url('gestionResult') ?>">Gestion Résultat</a>
 
-            </div>
-          </li>
+                </div>
+              </li>
               <li class="form-inline ">
                 <a href="<?= $router->url('logout') ?>" class="btn btn-warning">Déconnexion</a>
               </li>
@@ -141,16 +145,16 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
         <?php endif; ?>
 
         <?= $content ?>
-        <?php endif; ?>
-      </div>
-      <footer class="bg-light  footer mt-auto footer-copyright">
-        <div class="container col text-center">
-          Maison des Jeunes Vaubécourt &nbsp;
-          Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a> &nbsp;
-          <a href="https://www.facebook.com/MJ-Vaub%C3%A9court-154806714531516/" target="_blank" ><i class="fab fa-facebook-square" style="color:blue"></i></a>
+      <?php endif; ?>
         </div>
-      </footer>
+        <footer class="bg-light  footer mt-auto footer-copyright">
+          <div class="container col text-center">
+            Maison des Jeunes Vaubécourt &nbsp;
+            Style venant de : <a href="https://bootswatch.com/united/">bootswatch</a> &nbsp;
+            <a href="https://www.facebook.com/MJ-Vaub%C3%A9court-154806714531516/" target="_blank"><i class="fab fa-facebook-square" style="color:blue"></i></a>
+          </div>
+        </footer>
 
-    </body>
+      </body>
 
 </html>

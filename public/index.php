@@ -44,6 +44,7 @@ $router
     ->post('/admin/results/submit','admin/script/weekendResults/createResults','submitResults')
     ->post('/contact/send','admin/script/contact/submitAsk','submitAsk')
     ->post('/admin/results/delete','admin/script/weekendResults/deleteWeekend','deleteWeekend')
+    ->post('/admin/link/[a:method]','admin/script/link/link','linkgest')
 
     //Déconnexion
     ->get('/logout','admin/logout','logout')
@@ -62,6 +63,9 @@ $router
     ->get('/admin/reportedAccept/id=[i:id]','admin/script/calepin/reported/validateReported','validReportCalepin')
     ->get('/admin/results','admin/panel/weekendResults','createResult')
     ->get('/admin/results/show','admin/panel/gestionResult','gestionResult')
+    ->get('/admin/link/ajouter','admin/panel/link/linkAdd','gestionLink')
+    ->get('/admin/link','admin/panel/linkView','allLink')
+    ->get('/admin/link/edit','admin/panel/link/linkEdit','editLink')
 
 
     //Echo du phpinfo

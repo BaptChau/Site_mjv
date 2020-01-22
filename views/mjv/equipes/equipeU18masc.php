@@ -1,7 +1,12 @@
 <?php
 
+use App\Models\Link;
+
 require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
+$link = new Link();
+
+$u18 = $link->read('u18m');
 
 ?>
 
@@ -10,7 +15,7 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 <div>
 
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.ffhandball.fr/fr/competition/13712#poule-65603" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="<?= $u18[0]['link'] ?>" allowfullscreen></iframe>
     </div>
 
     <h3>Le mot des responsables de l'equipe Nicolas Jacquot et Fabien Denis : </h3>

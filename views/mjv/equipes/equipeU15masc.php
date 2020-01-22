@@ -1,7 +1,12 @@
 <?php
 
+use App\Models\Link;
+
 require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
+$link = new Link();
+
+$u15m = $link->read('u15m');
 
 ?>
 
@@ -10,7 +15,7 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 <div>
 
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.ffhandball.fr/fr/competition/13483#poule-68586" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="<?= $u15m[0]['link'] ?>" allowfullscreen></iframe>
     </div>
 
     <h3>Le mot des responsables de l'equipe Louis Zanon et Gaetan Mathieu : </h3>

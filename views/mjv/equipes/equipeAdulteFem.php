@@ -1,5 +1,13 @@
 <?php
+
+use App\Models\Link;
+
 require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
+
+$link = new Link();
+$arr = $link->read("sf");
+
+// dump($arr);
 ?>
 
 
@@ -8,7 +16,7 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
     <h2>Equipe 1 :</h2>
 
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.ffhandball.fr/fr/competition/13654#poule-65585" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="<?= $arr[0]['link'] ?>" allowfullscreen></iframe>
     </div>
 
     <h3>Le mot du responsable de l'equipe Olivier LeNormand : </h3>

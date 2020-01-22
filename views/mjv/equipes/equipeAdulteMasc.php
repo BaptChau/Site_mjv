@@ -1,7 +1,14 @@
 <?php
 
+use App\Models\Link;
+
 require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 
+$link = new Link();
+
+$sm1 = $link->read("sm1");
+
+$sm2 = $link->read("sm2");
 
 ?>
 
@@ -11,7 +18,7 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
     <h2>Equipe 1 :</h2>
 
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.ffhandball.fr/fr/competition/13656#poule-65600" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="<?= $sm1[0]['link'] ?>" allowfullscreen></iframe>
     </div>
 
     <h3>Le mot du responsable de l'equipe Luc Chaudron : </h3>
@@ -23,7 +30,7 @@ require_once 'C:\wamp64\www\sitePerso\vendor\autoload.php';
 <div>
     <h2>Equipe 2 : </h2>
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.ffhandball.fr/fr/competition/13479#poule-67262" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="<?= $sm2[0]['link'] ?>" allowfullscreen></iframe>
     </div>
     <h3>Le mot du responsable de l'equipe Jérémy Curman : </h3>
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, nesciunt?
