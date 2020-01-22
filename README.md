@@ -6,7 +6,7 @@ Les routes sont faite avec https://github.com/dannyvankooten/AltoRouter , et le 
 
 Pour utiliser le projet il faut importer les packages de composer via "composer require"
 
-Le projet utilisable sur WAMP et avec la commande suivante : 
+Le projet est utilisable sur WAMP et avec la commande suivante : 
 
 >php -S 127.0.0.1:8000 -t public/
 
