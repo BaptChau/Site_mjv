@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 18 déc. 2019 à 14:13
+-- Généré le :  mer. 22 jan. 2020 à 15:30
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `calepin` (
   `adminValid` tinyint(1) NOT NULL DEFAULT '0',
   `reported` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_article`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `calepin`
@@ -79,6 +79,32 @@ INSERT INTO `entrainement` (`id_entrmnt`, `coach`, `equipe`, `horraire`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `link`
+--
+
+DROP TABLE IF EXISTS `link`;
+CREATE TABLE IF NOT EXISTS `link` (
+  `libelle` varchar(64) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  PRIMARY KEY (`libelle`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `link`
+--
+
+INSERT INTO `link` (`libelle`, `link`) VALUES
+('u18m', 'https://www.ffhandball.fr/fr/competition/15343#poule-75172'),
+('sm1', 'https://www.ffhandball.fr/fr/competition/13479#poule-67262'),
+('sf', 'https://www.ffhandball.fr/fr/competition/13654#poule-65585'),
+('u11', 'https://www.ffhandball.fr/fr/competition/13487#poule-69198'),
+('u15m', 'https://www.ffhandball.fr/fr/competition/13483#poule-68586'),
+('u15f', 'https://www.ffhandball.fr/fr/competition/13484#poule-68587'),
+('sm2', 'https://www.ffhandball.fr/fr/competition/13479#poule-67262');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `news`
 --
 
@@ -116,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(128) NOT NULL,
   `identite` varchar(64) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
@@ -138,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `week_end_results` (
   `weekend` date NOT NULL,
   `results` text NOT NULL,
   PRIMARY KEY (`id_results`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `week_end_results`
