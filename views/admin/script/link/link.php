@@ -1,4 +1,4 @@
-EDIT<?php
+<?php
 
 // dump($_POST);
 // dump($_SERVER);
