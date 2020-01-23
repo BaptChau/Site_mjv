@@ -121,7 +121,7 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
                   Résultats du Weekend
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="<?= $router->url('createResult') ?>">Résultats du Weekend</a>
+                  <a class="dropdown-item" href="<?= $router->url('showresults') ?>">Résultats du Weekend</a>
                   <a class="dropdown-item" href="<?= $router->url('gestionResult') ?>">Gestion Résultat</a>
 
                 </div>
@@ -134,8 +134,7 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
         </nav>
         <div class="container mt-4">
 
-
-        <?php else : ?>
+        <?php else: ?>
 
           <body class="d-flex flex-column h-100 bg-light">
             <div class="jumbotron">

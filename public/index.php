@@ -41,9 +41,8 @@ $router
     ->post('/calepin/new/validator','mjv/calepin/validator','articleValid')
     ->post('/admin/conn','admin/panel/index','validUser')
     ->post('/admin/edit/ok','admin/script/updateArticle','saveEditedArticle')
-    ->post('/admin/results/submit','admin/script/weekendResults/createResults','submitResults')
+    ->post('/admin/results/[a:method]','admin/script/weekendResults/weekendResults','resultsGest')
     ->post('/contact/send','admin/script/contact/submitAsk','submitAsk')
-    ->post('/admin/results/delete','admin/script/weekendResults/deleteWeekend','deleteWeekend')
     ->post('/admin/link/[a:method]','admin/script/link/link','linkgest')
 
     //Déconnexion
@@ -61,8 +60,10 @@ $router
     ->get('/admin/unvalidCalepin/id=[i:id]','admin/script/calepin/unValidCalepin','unvalidCalepin')
     ->get('/admin/reportedDelete/id=[i:id]','admin/script/calepin/reported/unValidateReported','delReportCalepin')
     ->get('/admin/reportedAccept/id=[i:id]','admin/script/calepin/reported/validateReported','validReportCalepin')
-    ->get('/admin/results','admin/panel/weekendResults','createResult')
-    ->get('/admin/results/show','admin/panel/gestionResult','gestionResult')
+    ->get('/admin/results','admin/panel/weekendResults','showresults')
+    ->get('/admin/results','admin/panel/gestionResult','gestionResult')
+    ->get('/admin/results/create','admin/panel/weekend_results/weekend_add','createWeek')
+    ->get('/admin/results/edit','admin/panel/weekend_results/weekendEdit','editWeek')
     ->get('/admin/link/ajouter','admin/panel/link/linkAdd','gestionLink')
     ->get('/admin/link','admin/panel/linkView','allLink')
     ->get('/admin/link/edit','admin/panel/link/linkEdit','editLink')

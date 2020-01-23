@@ -2,6 +2,7 @@
 
 use App\Auth;
 use App\Base\Bdd;
+use App\Models\WeekendResults;
 
 session_start();
 $bdd = new Bdd();
@@ -13,29 +14,54 @@ if ($user === null) {
     // dump($user);
     header('Location:' . $router->url('index'));
 }
+$repo = new WeekendResults();
+
+$results = $repo->read();
 ?>
 
 
 <div class="container">
-    <h2>Résultats du weekend :</h2>
-    <div class="col">
 
+<table class="table table-stripped table-hover">
+    <thead class="table-primary">
+        <th>
+            Date :
+        </th>
+        <th>
+            Results :
+        </th>
+        <th>
+            Actions :
+        </th>
+    </thead>
+    <tbody>
+        <?php foreach($results as $k => $v): ?>
+        <tr>
+            <td>
+                <?= $v['weekend'] ?>
+            </td>
+            <td>
+                <?= $v['results']?>
+            </td>
+            <td>
+            <form action="<?= $router->url('resultsGest', [$_POST, "method"=>"EDIT"]) ?>" method="post" style="display: inline-block">
+                        <input type="hidden" name="id" value="<?= $v['id_results'] ?>">
+                        <input type="hidden" name="week" value="<?= $v['weekend'] ?>">
+                        <input type="hidden" name="results" value="<?= $v['results'] ?>">
 
-        <form action="<?= $router->url('submitResults',$_POST) ?>" method="post">
-            <div class="row">
-                <label for="date">Date</label>
-                <input type="date" name="date" id="date" class="form-control">
-            </div>
-            <br>
-            <div class="row">
-                <label for="resultat">Résultats</label>
-                <textarea name="results" id="resultat" cols="30" rows="10" class="form-control"></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button type="submit" class="btn btn-lg btn-success">Envoyer</button>
-            </div>
-        </form>
+                        <button class="btn btn-warning" type="submit">Editer</button>
+                    </form>
+                    <form action="<?= $router->url('resultsGest', [$_POST, "method"=>"DELETE"]) ?>" 
+                    onsubmit="return confirm('Etes vous sûr(e) ?')"
+                    method="post" style="display: inline-block">
+                        <input type="hidden" name="id" value="<?= $v['id_results'] ?>">
 
-    </div>
+                        <button class="btn btn-danger" type="submit">Supprimer</button>
+                    </form>
+            </td>
+        </tr>
+        <?php endforeach?>
+    </tbody>
+</table>
+<a href="<?= $router->url('createWeek') ?>" class="btn btn-success float-right">Ajouter Résultats</a>
 </div>
