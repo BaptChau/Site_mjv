@@ -132,7 +132,7 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
             </ul>
           </div>
         </nav>
-        <div class="container">
+        <div class="container mt-4">
 
 
         <?php else : ?>
