@@ -44,6 +44,7 @@ $router
     ->post('/admin/results/[a:method]','admin/script/weekendResults/weekendResults','resultsGest')
     ->post('/contact/send','admin/script/contact/submitAsk','submitAsk')
     ->post('/admin/link/[a:method]','admin/script/link/link','linkgest')
+    ->post('/admin/news/delete','admin/script/deleteNews','deleteNews')
 
     //Déconnexion
     ->get('/logout','admin/logout','logout')

@@ -34,10 +34,16 @@ $allNews = $bdd->executeQuery($bdd->getAllNews());
                 <td><?php echo $value['contenu'] ?></td>
                 <td>
                     <a href="<?= $router->url('editArticle',['id'=>$value['id_news']]) ?>" class="btn btn-info">Editer</a>
-                    <a href="" class="btn btn-danger">Supprimer</a>
+                    <form action="<?= $router->url('deleteNews', $_POST)?>" method="post" onsubmit="return confirm('Etes vous sûr ?')" style="display: inline-block">
+                    <input type="hidden" name="id" value="<?= $value['id_news']?>">
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </form>
+                    <!-- <a href="" class="btn btn-danger">Supprimer</a> -->
                 </td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
+
+<a href="<?= $router->url('addArticle') ?>" class="btn btn-success float-right">Ajout d'un article</a>
 </div>

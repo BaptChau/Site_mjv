@@ -105,9 +105,6 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
                 <a class="nav-link" href="<?= $router->url('newUser') ?>">Ajouter Utilisateur </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="<?= $router->url('addArticle') ?>">Ajouter Article</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="<?= $router->url('verifCalpin') ?>">Gestion Calepin</a>
               </li>
               <li class="nav-item">
