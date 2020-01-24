@@ -111,17 +111,11 @@ if (false === strpos($_SERVER['REQUEST_URI'], 'admin') || empty($_SERVER['REQUES
                 <a class="nav-link" href="<?= $router->url('verifNews') ?>">Gestion Feed News</a>
               </li>
               </li>
-<li class="nav-item">
-  <a href="<?= $router->url('allLink')?>" class="nav-link">Gestion des liens</a></li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-                  Résultats du Weekend
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="<?= $router->url('showresults') ?>">Résultats du Weekend</a>
-                  <a class="dropdown-item" href="<?= $router->url('gestionResult') ?>">Gestion Résultat</a>
-
-                </div>
+              <li class="nav-item">
+                <a href="<?= $router->url('allLink')?>" class="nav-link">Gestion des liens</a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= $router->url('showresults')?>" class="nav-link">Résultat du weekend</a>
               </li>
               <li class="form-inline ">
                 <a href="<?= $router->url('logout') ?>" class="btn btn-warning">Déconnexion</a>
