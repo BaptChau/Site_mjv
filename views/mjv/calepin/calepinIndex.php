@@ -21,18 +21,20 @@ $arr = $base->executeQuery($base->getArticle());
 
 <div class="container-fluid">
     <?php foreach ($arr as $key => $value) :  ?>
-        <div class="jumbotron">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo ($value['titre']) ?> <a href="<?= $router->url('calepinReport',['id'=>$value['id_article']]) ?>" class="badge badge-pill badge-danger" > Signaler</a></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?php echo ($value['auteur']) ?></h6>
-                    <p class="card-text"><?php echo nl2br(htmlspecialchars($value['contenu']) )?></p>
-                    <span class="badge badge-pill badge-light"><?php if($value['reported'] == 1) echo 'Cet Article a été signalé !' ?></span>
-                </div>
-            </div>
-        </div>
+<div class="card mt-4">
+<div class="card-header"><h3><?php echo ($value['titre']) ?></h3></div>
 
+  <div class="card-body">
+    <blockquote class="blockquote">
+    <h4 class="card-title"><?php echo ($value['auteur']) ?> </h4>
+    <h6 class="card-subtitle mb-2 text-muted"><a href="<?= $router->url('calepinReport',['id'=>$value['id_article']]) ?>" class="badge badge-pill badge-danger" > Signaler</a></h6>
 
+    <p class="card-text"><?php echo nl2br(htmlspecialchars($value['contenu']) )?></p>
+      <footer class="card-blockquote"><cite title="Source title">    <span class="badge badge-pill badge-light"><?php if($value['reported'] == 1) echo 'Cet Article a été signalé !' ?></span>
+</cite></footer>
+    </blockquote>
+  </div>
+</div>
     <?php endforeach; ?>
 
 </div>
