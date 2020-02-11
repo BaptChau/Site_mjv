@@ -1,13 +1,18 @@
 <?php
 
+
 require '../vendor/autoload.php';
 
 
-
+//Gestion des erreurs
 $whoops = new \Whoops\Run;
 $whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops->register();
+//Chargement du fichier .env
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
 
+//Routeur PHP
 $router = new App\Router(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views');
 $router
     ->get('/', 'mjv/index', 'index')

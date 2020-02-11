@@ -9,6 +9,7 @@
         "filp/whoops": "^2.5",
         "symfony/var-dumper": "^5.0",
         "phpmailer/phpmailer": "^6.1",
-        "nette/mail": "^3.1"
+        "nette/mail": "^3.1",
+        "vlucas/phpdotenv": "^4.1"
     }
 }

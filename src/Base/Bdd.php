@@ -2,6 +2,15 @@
 
 namespace App\Base;
 
+function env(string $name, $default = null)
+{
+    $val = getenv($name);
+    if ($val === false) {
+        $val = $default;
+    }
+
+    return $val;
+}
 use \PDO;
 
 class Bdd
@@ -14,7 +23,15 @@ class Bdd
 
     public function __construct()
     {
-        $this->connexion = new PDO('mysql:host=localhost;dbname=mjv','root','',[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"]);
+        
+        $name = env('MYSQL_NAME');
+        $user = env('MYSQL_USER');
+        $pass = env('MYSQL_PASS');
+        
+        $this->connexion = new PDO("mysql:host=localhost;dbname={$name}","{$user}","{$pass}",[PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"]);
+        $this->connexion->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $this->connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->connexion->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
     /**

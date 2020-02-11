@@ -4,11 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb3e97cab67364aea5222698350d2a009
+class ComposerStaticInit4f8daec6a85f9b0b5ab058212f12add0
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'afdda9f94b76f77a7518e02eee753cc9' => __DIR__ . '/..' . '/nette/mail/src/compatibility.php',
     );
 
@@ -20,12 +21,18 @@ class ComposerStaticInitb3e97cab67364aea5222698350d2a009
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
         ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'PhpOption\\' => 10,
             'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'D' => 
+        array (
+            'Dotenv\\' => 7,
         ),
         'A' => 
         array (
@@ -42,6 +49,10 @@ class ComposerStaticInitb3e97cab67364aea5222698350d2a009
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
@@ -50,9 +61,17 @@ class ComposerStaticInitb3e97cab67364aea5222698350d2a009
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'PhpOption\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
         'App\\' => 
         array (
@@ -120,9 +139,9 @@ class ComposerStaticInitb3e97cab67364aea5222698350d2a009
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb3e97cab67364aea5222698350d2a009::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb3e97cab67364aea5222698350d2a009::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitb3e97cab67364aea5222698350d2a009::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4f8daec6a85f9b0b5ab058212f12add0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4f8daec6a85f9b0b5ab058212f12add0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit4f8daec6a85f9b0b5ab058212f12add0::$classMap;
 
         }, null, ClassLoader::class);
     }
