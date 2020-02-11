@@ -7,6 +7,7 @@ Les routes sont faite avec https://github.com/dannyvankooten/AltoRouter , et le 
 Pour utiliser le projet il faut importer les packages de composer via la commande suivante
 >composer install
 
+Puis ajoutez la base de données dans phpmyadmin garce au script mjv.sql ou mjv.php disponible a la racine
 Le projet est utilisable sur WAMP et avec la commande suivante : 
 
 >php -S 127.0.0.1:8000 -t public/
