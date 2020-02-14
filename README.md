@@ -1,4 +1,4 @@
-# Site Minimal Terminé.
+# Site Minimal Terminé. Nouvelle version en cours sur https://github.com/BaptChau/site-mjv2
 
 Site internet d'un club de hand avec une gestion de route
 
